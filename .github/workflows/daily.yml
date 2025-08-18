@@ -1,0 +1,16 @@
+name: Daily FPL Prices
+on:
+  schedule:
+    - cron: "40 1 * * *"  # Runs daily 01:40 GMT
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - run: pip install requests beautifulsoup4
+      - run: python script.py
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
