@@ -49,7 +49,70 @@ try:
                 
                 # Parse player name - it's usually in format "PlayerNamePOS £X.X"
                 # Remove position and price info
-                player_name = re.sub(r'(GK|DEF|MID|FW)\s*£[\d.]+.*, '', player_text).strip()
+                player_name = re.sub(r'(GK|DEF|MID|FW)\s*£[\d.]+.*
+                
+                # Also try removing just the price part
+                if not player_name:
+                    player_name = re.sub(r'£[\d.]+.*, '', player_text).strip()
+                
+                # Clean up any remaining artifacts
+                player_name = re.sub(r'\s+', ' ', player_name).strip()
+                
+                # Skip if we couldn't extract a valid player name
+                if not player_name or len(player_name) < 2:
+                    continue
+                
+                # Skip if progress data doesn't look like percentages
+                if not re.search(r'[\d.-]+%', progress_now):
+                    continue
+                
+                count += 1
+                
+                # Format the output
+                msg += f"{count}. **{player_name}**\n"
+                msg += f"   📈 Current: {progress_now}\n"
+                msg += f"   🔮 Prediction: {prediction}\n"
+                msg += f"   ⏰ Time: {time_estimate}\n"
+                msg += f"   ⏱️ Per hour: {progress_per_hour}\n\n"
+        
+        # If no data found, provide debug info
+        if count == 0:
+            msg = "❌ Debug - Table structure analysis:\n\n"
+            msg += f"Found table with {len(rows)} rows\n\n"
+            
+            # Show structure of first few rows
+            for i, row in enumerate(rows[:3]):
+                cols = row.find_all(['td', th'])
+                msg += f"Row {i}: {len(cols)} columns\n"
+                for j, col in enumerate(cols[:5]):
+                    text = col.get_text(strip=True)[:30]
+                    msg += f"  [{j}]: {text}\n"
+                msg += "\n"
+
+except requests.RequestException as e:
+    msg = f"❌ Error accessing LiveFPL: {str(e)}"
+    print(f"Request error: {e}")
+except Exception as e:
+    msg = f"❌ Error parsing LiveFPL data: {str(e)}"
+    print(f"Parsing error: {e}")
+
+# Send to Discord
+try:
+    discord_response = requests.post(WEBHOOK, json={"content": msg})
+    print(f"Discord webhook response: {discord_response.status_code}")
+    print(f"Message length: {len(msg)} characters")
+    
+    if discord_response.status_code != 200:
+        print(f"Discord error: {discord_response.text}")
+        
+except Exception as e:
+    print(f"Discord webhook error: {e}")
+
+# Always print the message for debugging
+print("=" * 50)
+print("MESSAGE CONTENT:")
+print(msg)
+print("=" * 50), '', player_text).strip()
                 
                 # Also try removing just the price part
                 if not player_name:
