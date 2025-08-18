@@ -1,6 +1,5 @@
 name: Daily FPL Prices
 on:
-  workflow_dispatch: # Putting here is also fine!!
   schedule:
     - cron: "40 1 * * *"  # Runs daily 01:40 GMT
 jobs:
