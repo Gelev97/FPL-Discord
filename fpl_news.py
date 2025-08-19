@@ -7,7 +7,7 @@ from datetime import datetime, timedelta, timezone
 SUBREDDIT = "FantasyPL"
 FLAIR = "News"
 LIMIT = 50  # fetch more, filter later
-DISCORD_WEBHOOK = os.environ("DISCORD_FPL_NEWS_WEBHOOK")
+DISCORD_WEBHOOK = os.environ["DISCORD_FPL_NEWS_WEBHOOK"]
 REQUEST_TIMEOUT = 10  # seconds
 MAX_RETRIES = 3
 # ===============
