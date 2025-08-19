@@ -1,0 +1,26 @@
+name: FPL Reddit to Discord
+
+on:
+  schedule:
+    - cron: "0 18 * * *"   # every day at 18:00 UTC
+  workflow_dispatch:        # manual trigger
+
+jobs:
+  post-news:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5      # fail if job > 5 minutes
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run script
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_FPL_NEWS_WEBHOOK }}
+        run: python fpl_news.py
