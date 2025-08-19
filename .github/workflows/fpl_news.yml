@@ -2,7 +2,8 @@ name: FPL News to Discord
 
 on:
   schedule:
-    - cron: "0 2 * * *"   # every day at 18:00 UTC
+    - cron: "0 2 * * *"   # every day at 18:00 PST
+    - cron: "30 5 * * *"   # test
   workflow_dispatch:
 
 jobs:
