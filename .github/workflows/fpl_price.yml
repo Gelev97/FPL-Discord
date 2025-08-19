@@ -13,6 +13,6 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install requests beautifulsoup4
-      - run: python script.py
+      - run: python fpl_price.py
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_FPL_PRICE_WEBHOOK }}
