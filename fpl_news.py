@@ -1,73 +1,48 @@
-import requests
 import os
 import time
+import praw
+import requests
 from datetime import datetime, timedelta, timezone
 
-# ==== CONFIG ====
+# Reddit setup
+reddit = praw.Reddit(
+    client_id=os.getenv("REDDIT_CLIENT_ID"),
+    client_secret=os.getenv("REDDIT_CLIENT_SECRET"),
+    user_agent=os.getenv("REDDIT_USER_AGENT"),
+)
+
+# Config
 SUBREDDIT = "FantasyPL"
 FLAIR = "News"
-LIMIT = 50  # fetch more, filter later
-DISCORD_WEBHOOK = os.environ['DISCORD_WEBHOOK']
-REQUEST_TIMEOUT = 10  # seconds
-MAX_RETRIES = 3
-# ===============
+DISCORD_WEBHOOK = os.getenv("DISCORD_FPL_NEWS_WEBHOOK")
 
-def fetch_reddit_posts(subreddit, flair, limit=50):
-    url = (
-        f"https://www.reddit.com/r/{subreddit}/search.json"
-        f"?q=flair_name%3A%22{flair}%22&restrict_sr=on&sort=new&limit={limit}"
-    )
-    headers = {"User-Agent": "github-action-script/0.1"}
-    for attempt in range(1, MAX_RETRIES + 1):
-        try:
-            r = requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT)
-            r.raise_for_status()
-            return r.json()["data"]["children"]
-        except Exception as e:
-            print(f"[Attempt {attempt}] Failed to fetch posts: {e}")
-            if attempt == MAX_RETRIES:
-                raise
-            time.sleep(2 * attempt)  # exponential backoff
+# Time window: Yesterday 6 PM → Today 6 PM
+now = datetime.now(timezone.utc)
+yesterday = now - timedelta(days=1)
+start_time = yesterday.replace(hour=18, minute=0, second=0, microsecond=0).timestamp()
+end_time = now.replace(hour=18, minute=0, second=0, microsecond=0).timestamp()
 
-def send_to_discord(webhook, content):
-    for attempt in range(1, MAX_RETRIES + 1):
-        try:
-            r = requests.post(webhook, json={"content": content}, timeout=REQUEST_TIMEOUT)
-            r.raise_for_status()
-            return
-        except Exception as e:
-            print(f"[Attempt {attempt}] Failed to send to Discord: {e}")
-            if attempt == MAX_RETRIES:
-                raise
-            time.sleep(2 * attempt)
+print(f"Fetching posts between {datetime.fromtimestamp(start_time, tz=timezone.utc)} "
+      f"and {datetime.fromtimestamp(end_time, tz=timezone.utc)}")
+
+def send_to_discord(content: str):
+    """Send message to Discord webhook."""
+    payload = {"content": content}
+    r = requests.post(DISCORD_WEBHOOK, json=payload, timeout=10)
+    r.raise_for_status()
 
 def main():
-    if not DISCORD_WEBHOOK:
-        raise ValueError("Please set DISCORD_WEBHOOK as an environment variable")
+    found_posts = False
+    for submission in reddit.subreddit(SUBREDDIT).search(f'flair:"{FLAIR}"', sort="new", time_filter="day", limit=50):
+        created = submission.created_utc
+        if start_time <= created < end_time:
+            found_posts = True
+            msg = f"**{submission.title}**\nhttps://reddit.com{submission.permalink}"
+            send_to_discord(msg)
+            time.sleep(2)  # avoid spamming Discord too fast
 
-    now = datetime.now(timezone.utc)
-    yesterday = now - timedelta(days=1)
-
-    # Daily window: yesterday 18:00 UTC → today 18:00 UTC
-    start_time = yesterday.replace(hour=18, minute=0, second=0, microsecond=0)
-    end_time   = now.replace(hour=18, minute=0, second=0, microsecond=0)
-
-    start_ts = start_time.timestamp()
-    end_ts = end_time.timestamp()
-
-    print(f"Fetching posts between {start_time} and {end_time}")
-
-    posts = fetch_reddit_posts(SUBREDDIT, FLAIR, LIMIT)
-    for post in posts:
-        data = post["data"]
-        created = data["created_utc"]
-
-        if start_ts <= created < end_ts:
-            title = data["title"]
-            url = f"https://reddit.com{data['permalink']}"
-            message = f"📰 **{title}**\n{url}"
-            print("Sending:", message)
-            send_to_discord(DISCORD_WEBHOOK, message)
+    if not found_posts:
+        print("No new posts in the given window.")
 
 if __name__ == "__main__":
     main()

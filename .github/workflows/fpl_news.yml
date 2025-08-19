@@ -1,14 +1,14 @@
-name: FPL Reddit to Discord
+name: FPL News to Discord
 
 on:
   schedule:
     - cron: "0 18 * * *"   # every day at 18:00 UTC
-  workflow_dispatch:        # manual trigger
+  workflow_dispatch:
 
 jobs:
   post-news:
     runs-on: ubuntu-latest
-    timeout-minutes: 5      # fail if job > 5 minutes
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
 
@@ -18,9 +18,12 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install praw requests
 
       - name: Run script
         env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_FPL_NEWS_WEBHOOK }}
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USER_AGENT: ${{ secrets.REDDIT_USER_AGENT }}
+          DISCORD_FPL_NEWS_WEBHOOK: ${{ secrets.DISCORD_FPL_NEWS_WEBHOOK }}
         run: python fpl_news.py
