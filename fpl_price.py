@@ -64,13 +64,13 @@ def fetch_price_data() -> List[Dict[str, Any]]:
         prediction = prog_matches[1] if len(prog_matches) > 1 else ''
         progress_per_hour = prog_matches[-1] if len(prog_matches) > 0 else ''
 
-        # Prediction time (e.g., '>2 days', '>5 hours')
-        prediction_time = next((l for l in lines if 'day' in l or 'hour' in l), '')
+        # Prediction time (e.g., '>2 days', '>5 hours', 'Tonight', 'Tomorrow')
+        prediction_time = next((l for l in lines if 'day' in l or 'hour' in l or 'Tonight' in l or 'Tomorrow' in l), '')
 
         # Team
         team_candidates = [l for l in lines if l not in [pos_price_line, name, price] 
                            and not re.match(r'[+-]?[0-9.]+%', l) 
-                           and 'day' not in l and 'hour' not in l]
+                           and 'day' not in l and 'hour' not in l and 'Tonight' not in l and 'Tomorrow' not in l]
         team = team_candidates[0] if team_candidates else ''
 
         players_data.append({
