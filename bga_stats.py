@@ -416,17 +416,17 @@ class BGAGameTracker:
                 "text": "Game categorization based on top player ELO"
             }
         }
-    
-    payload = {"embeds": [embed]}
-    
-    try:
-        response = requests.post(self._webhook, json=payload, timeout=10)
-        if response.status_code == 204:
-            print("Discord game list sent successfully")
-        else:
-            print(f"Discord game list failed: {response.status_code}")
-    except Exception as e:
-        print(f"Discord game list error: {e}")
+        
+        payload = {"embeds": [embed]}
+        
+        try:
+            response = requests.post(self._webhook, json=payload, timeout=10)
+            if response.status_code == 204:
+                print("Discord game list sent successfully")
+            else:
+                print(f"Discord game list failed: {response.status_code}")
+        except Exception as e:
+            print(f"Discord game list error: {e}")
 
     def _generate_report(self, analyzed_games: Dict[str, Dict[str, Any]]) -> None:
         """Generate and save the analysis report with Discord integration."""
