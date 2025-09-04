@@ -136,16 +136,7 @@ def send_discord_embeds(players_data: List[Dict[str, Any]], webhook_url: str) ->
     embed = {
         "title": "Daily FPL Price Predictions",
         "description": f"Top predicted price changes from LiveFPL",
-        "color": 0x2ecc71,  # Green
-        "thumbnail": {
-            "url": "https://fantasy.premierleague.com/static/favicon/favicon-32x32.png"
-        },
-        "fields": [],
-        "footer": {
-            "text": "Data from LiveFPL.net",
-            "icon_url": "https://fantasy.premierleague.com/static/favicon/favicon-16x16.png"
-        },
-        "timestamp": datetime.now().isoformat()
+        "color": 0x3498db
     }
 
     # Add risers field

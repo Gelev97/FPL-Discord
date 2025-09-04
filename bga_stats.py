@@ -313,140 +313,166 @@ class BGAGameTracker:
         with open(self._database_file, 'w') as f:
             json.dump(database, f, indent=2)
     
+    def _send_discord_embed(self, elo_categories: Dict[str, List[Tuple[str, Dict[str, Any]]]], category_totals: Dict[str, Dict[str, Any]]) -> None:
+        """Send BGA stats as Discord embed with one ELO category per field row."""
+        if not self._webhook:
+            return
+        
+        # Create fields - one per ELO category
+        fields = []
+        ordered_keys = [">800", "700-800", "600-700", "500-600", "<500"]
+        
+        for category in ordered_keys:
+            if category not in elo_categories or not elo_categories[category]:
+                continue
+                
+            # Get category totals
+            if category in category_totals:
+                totals = category_totals[category]['player_stats']
+                
+                # Sort players by win percentage
+                sorted_players = sorted(
+                    totals.items(),
+                    key=lambda x: x[1]['win_percentage'],
+                    reverse=True
+                )
+                
+                # Create compact value for this category
+                value_lines = []
+                for player, stats in sorted_players:
+                    line = f"{player}: 1st {stats['win_ratio']} ({stats['win_percentage']}%) | 2nd {stats['second_ratio']} ({stats['second_percentage']}%)"
+                    value_lines.append(line)
+                
+                # Join with newlines and check length
+                value = "\n".join(value_lines)
+                if len(value) > 1024:  # Discord field limit
+                    # Truncate to fit
+                    value = value[:1000] + "...\n*(truncated)*"
+                
+                fields.append({
+                    "name": f"ELO: {category}",
+                    "value": value,
+                    "inline": False  # Full width for readability
+                })
+        
+        # Create main embed
+        embed = {
+            "title": "BGA Game Statistics",
+            "description": f"Analysis for: {', '.join(self.user_list)}",
+            "color": 0x3498db,  # Blue
+            "fields": fields,
+            "footer": {
+                "text": "Counted stats for games with two or more players in this Discord."
+            },
+        }
+        
+        payload = {"embeds": [embed]}
+        
+        try:
+            response = requests.post(self._webhook, json=payload, timeout=10)
+            if response.status_code == 204:
+                print("Discord stats embed sent successfully")
+            else:
+                print(f"Discord stats embed failed: {response.status_code}")
+        except Exception as e:
+            print(f"Discord stats embed error: {e}")
+
+    def _send_discord_game_list(self, elo_categories: Dict[str, List[Tuple[str, Dict[str, Any]]]]) -> None:
+        """Send game list as a separate compact Discord embed."""
+        if not self._webhook:
+            return
+        
+        # Create one field per ELO category with game names
+        fields = []
+        ordered_keys = [">800", "700-800", "600-700", "500-600", "<500"]
+        
+        for category in ordered_keys:
+            if category not in elo_categories or not elo_categories[category]:
+                continue
+                
+            # Get game names for this category
+            game_names = [game_name for game_name, _ in elo_categories[category]]
+            
+            # Format as comma-separated list
+            games_text = ", ".join(game_names)
+            
+            # Check Discord field limit
+            if len(games_text) > 1024:
+                games_text = games_text[:1000] + "..."
+            
+            fields.append({
+                "name": f"{category} ELO",
+                "value": games_text,
+                "inline": False
+            })
+        
+        # Create game list embed
+        embed = {
+            "title": "Games by ELO Category",
+            "description": "Complete list of analyzed games",
+            "color": 0x2ecc71,  # Green
+            "fields": fields,
+            "footer": {
+                "text": "Game categorization based on top player ELO"
+            }
+        }
+    
+    payload = {"embeds": [embed]}
+    
+    try:
+        response = requests.post(self._webhook, json=payload, timeout=10)
+        if response.status_code == 204:
+            print("Discord game list sent successfully")
+        else:
+            print(f"Discord game list failed: {response.status_code}")
+    except Exception as e:
+        print(f"Discord game list error: {e}")
+
     def _generate_report(self, analyzed_games: Dict[str, Dict[str, Any]]) -> None:
         """Generate and save the analysis report with Discord integration."""
         report = []
-        discord_fields = []
-
-        for category, users in analyzed_games.items():
-            if not users:
+        
+        # Calculate category totals first
+        category_totals = self.calculate_category_totals(analyzed_games)
+        
+        # Generate text report
+        ordered_keys = [">800", "700-800", "600-700", "500-600", "<500"]
+        
+        for category in ordered_keys:
+            if category not in category_totals:
                 continue
                 
             report.append(f'ELO CATEGORY: {category}')
             report.append('-' * 40)
             
-            win_ratio = []
-            discord_value = ""
-            
-            for user, result in users.items():
-                win_ratio.append([user, result['win'], result['second'], result['total']])
-                
-            # Sort players by win percentage
+            # Show category totals
+            totals = category_totals[category]['player_stats']
             sorted_stats = sorted(
-                win_ratio,
-                key=lambda x: x[1]/x[3] if x[3] > 0 else 0,
+                totals.items(),
+                key=lambda x: x[1]['win_percentage'],
                 reverse=True
             )
             
-            for stat in sorted_stats:
-                win_pct = round(stat[1] / stat[3] * 100) if stat[3] > 0 else 0
-                second_pct = round(stat[2] / stat[3] * 100) if stat[3] > 0 else 0
-                
-                # For text report
+            for player, stats in sorted_stats:
                 report.append(
-                    f'  {stat[0]}: '
-                    f'🥇{stat[1]}/{stat[3]} ({win_pct}%), '
-                    f'🥈{stat[2]}/{stat[3]} ({second_pct}%)'
+                    f'  {player}: '
+                    f'1st {stats["win_ratio"]} ({stats["win_percentage"]}%), '
+                    f'2nd {stats["second_ratio"]} ({stats["second_percentage"]}%)'
                 )
-                
-                # For Discord embed
-                discord_value += f'{stat[0]}: 🥇{stat[1]}/{stat[3]} ({win_pct}%) 🥈{stat[2]}/{stat[3]} ({second_pct}%)\n'
             
             report.append('')
-            
-            # Add to Discord fields
-            discord_fields.append({
-                "name": f"ELO: {category}",
-                "value": discord_value.strip()[:1024],  # Discord field limit
-                "inline": True
-            })
 
-        # Send Discord embed
-        self._send_discord_embed(discord_fields)
+        # Send to Discord with embeds
+        self._send_discord_embed(analyzed_games, category_totals)
+        
+        # Send game list
+        self._send_discord_game_list(analyzed_games)
         
         # Save text report
         with open('bga_analysis_report.txt', 'w') as f:
             f.write('\n'.join(report))
-
-        # Send game list to Discord
-        elo_categories = []
-        ordered_keys = [">800", "700-800", "600-700", "500-600", "<500"]
-        for key in ordered_keys:
-            if key in self._elo_category_dict:
-                games = self._elo_category_dict[key]
-                elo_categories.append(f'{key}: {", ".join(games)}')
-
-        self._send_discord_game_list(elo_categories)
-
-    def _send_discord_embed(self, fields: List[Dict[str, Any]]) -> None:
-        """Send BGA stats as Discord embed."""
-        if not self._webhook:
-            return
         
-        embed = {
-            "title": "🎲 BGA Game Statistics",
-            "description": f"Weekly analysis for tracked players",
-            "color": 0x3498db,  # Blue color
-            "fields": fields,
-            "timestamp": datetime.now().isoformat()
-        }
-        
-        payload = {"embeds": [embed]}
-        
-        try:
-            response = requests.post(self._webhook, json=payload, timeout=10)
-            if response.status_code == 204:
-                print("Discord embed sent successfully")
-            else:
-                print(f"Discord embed failed: {response.status_code}")
-        except Exception as e:
-            print(f"Discord embed error: {e}")
-
-    def _send_discord_game_list(self, elo_categories: List[str]) -> None:
-        """Send game list as a separate Discord message."""
-        if not self._webhook or not elo_categories:
-            return
-        
-        embed = {
-            "title": "🎮 Games by ELO Category",
-            "description": "\n".join(elo_categories),
-            "color": 0x2ecc71,  # Green color
-            "footer": {
-                "text": "Game categorization based on top player ELO"
-            },
-            "timestamp": datetime.now().isoformat()
-        }
-        
-        payload = {"embeds": [embed]}
-        
-        try:
-            response = requests.post(self._webhook, json=payload, timeout=10)
-            if response.status_code == 204:
-                print("Discord game list sent successfully")
-            else:
-                print(f"Discord game list failed: {response.status_code}")
-        except Exception as e:
-            print(f"Discord game list error: {e}")
-
-    def _send_discord_message(self, message_lines: List[str], webhook: str) -> None:
-        """Fallback method for simple text messages (kept for compatibility)."""
-        if not webhook:
-            return
-            
-        message = "\n".join(message_lines)
-        if len(message) > 2000:  # Discord message limit
-            message = message[:1997] + "..."
-        
-        payload = {"content": f"```\n{message}\n```"}
-        
-        try:
-            response = requests.post(webhook, json=payload, timeout=10)
-            if response.status_code == 204:
-                print("Discord message sent successfully")
-            else:
-                print(f"Discord message failed: {response.status_code}")
-        except Exception as e:
-            print(f"Discord message error: {e}")
+        print("Reports generated and sent to Discord")
 
 
     def scrape_and_analyze(self, user_list: Optional[List[str]] = None, first_time: bool = False) -> None:
