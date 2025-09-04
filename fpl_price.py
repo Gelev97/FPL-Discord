@@ -3,6 +3,7 @@ import re
 import sys
 import requests
 from bs4 import BeautifulSoup
+from datetime import datetime
 from typing import Dict, List, Any, Optional
 
 WEBHOOK: Optional[str] = os.environ.get("DISCORD_WEBHOOK")
@@ -88,44 +89,131 @@ def fetch_price_data() -> List[Dict[str, Any]]:
     return players_data
 
 
-def format_message(players_data: List[Dict[str, Any]]) -> str:
-    """Format player data into Discord message."""
+def create_player_field(players: List[Dict[str, Any]], title: str) -> Dict[str, Any]:
+    """Create a Discord embed field for players."""
+    if not players:
+        return {"name": title, "value": "No players found", "inline": False}
+    
+    value_lines = []
+    for i, p in enumerate(players[:10], 1):  # Limit to top 10
+        line = (f"{i}. **{p['name']}** ({p['position']}) {p['price']} - {p['team']}\n"
+                f"   Now: {p['progress_now']}, Pred: {p['prediction']}, "
+                f"Time: {p['prediction_time']}")
+        value_lines.append(line)
+    
+    # Discord field value limit is 1024 characters
+    value = "\n\n".join(value_lines)
+    if len(value) > 1024:
+        # Truncate and add indicator
+        value = value[:1000] + "...\n*(truncated)*"
+    
+    return {"name": title, "value": value, "inline": False}
+
+
+def send_discord_embeds(players_data: List[Dict[str, Any]], webhook_url: str) -> None:
+    """Send FPL data as Discord embeds."""
     if not players_data:
-        return "❌ No player data found"
+        # Send error embed
+        embed = {
+            "title": "FPL Price Predictions",
+            "description": "No player data found",
+            "color": 0xe74c3c,  # Red
+            "timestamp": datetime.now().isoformat()
+        }
+        payload = {"embeds": [embed]}
+        requests.post(webhook_url, json=payload)
+        return
 
-    # Sort by prediction
+    # Sort players
     players_data.sort(key=lambda x: x['prediction_value'], reverse=True)
-
-    # Top 10 risers and fallers
-    risers = [p for p in players_data if p['prediction_value'] > 0][:10]
+    
+    # Get risers and fallers
+    risers = [p for p in players_data if p['prediction_value'] > 0]
     fallers = [p for p in players_data if p['prediction_value'] < 0]
     fallers.sort(key=lambda x: x['prediction_value'])
-    fallers = fallers[:10]
 
-    # Compose message
-    msg = "📊 **Daily LiveFPL Price Predictions**\n\n"
+    # Create main embed
+    embed = {
+        "title": "Daily FPL Price Predictions",
+        "description": f"Top predicted price changes from LiveFPL",
+        "color": 0x2ecc71,  # Green
+        "thumbnail": {
+            "url": "https://fantasy.premierleague.com/static/favicon/favicon-32x32.png"
+        },
+        "fields": [],
+        "footer": {
+            "text": "Data from LiveFPL.net",
+            "icon_url": "https://fantasy.premierleague.com/static/favicon/favicon-16x16.png"
+        },
+        "timestamp": datetime.now().isoformat()
+    }
 
-    msg += "📈 **TOP 10 PREDICTED RISERS:**\n\n"
-    for i, p in enumerate(risers, 1):
-        msg += (
-            f"{i}. **{p['name']}** ({p['position']}) {p['price']} - {p['team']}\n"
-            f"   Progress Now📈: {p['progress_now']}, Prediction: {p['prediction']}, "
-            f"Prediction Time: {p['prediction_time']}, Progress/hr: {p['progress_per_hour']}\n"
-        )
+    # Add risers field
+    if risers:
+        risers_field = create_player_field(risers[:5], "📈 Top 5 Predicted Risers")
+        embed["fields"].append(risers_field)
 
-    msg += "\n📉 **TOP 10 PREDICTED FALLERS:**\n\n"
-    for i, p in enumerate(fallers, 1):
-        msg += (
-            f"{i}. **{p['name']}** ({p['position']}) {p['price']} - {p['team']}\n"
-            f"   Progress Now📉: {p['progress_now']}, Prediction: {p['prediction']}, "
-            f"Prediction Time: {p['prediction_time']}, Progress/hr: {p['progress_per_hour']}\n"
-        )
+    # Add fallers field  
+    if fallers:
+        fallers_field = create_player_field(fallers[:5], "📉 Top 5 Predicted Fallers")
+        embed["fields"].append(fallers_field)
 
-    return msg
+    # Add summary field
+    summary_value = f"Total Risers: {len(risers)}\nTotal Fallers: {len(fallers)}\nData Points: {len(players_data)}"
+    embed["fields"].append({
+        "name": "Summary",
+        "value": summary_value,
+        "inline": True
+    })
+
+    # Send main embed
+    payload = {"embeds": [embed]}
+    
+    try:
+        response = requests.post(webhook_url, json=payload, timeout=10)
+        if response.status_code == 204:
+            print("Discord embed sent successfully")
+        else:
+            print(f"Discord embed failed: {response.status_code}")
+    except Exception as e:
+        print(f"Discord embed error: {e}")
+
+    # If there are more than 5 risers/fallers, send additional embeds
+    if len(risers) > 5:
+        send_additional_embed(risers[5:10], "📈 More Predicted Risers (6-10)", 0x27ae60, webhook_url)
+    
+    if len(fallers) > 5:
+        send_additional_embed(fallers[5:10], "📉 More Predicted Fallers (6-10)", 0xe67e22, webhook_url)
+
+
+def send_additional_embed(players: List[Dict[str, Any]], title: str, color: int, webhook_url: str) -> None:
+    """Send additional embed for extended player lists."""
+    if not players:
+        return
+    
+    field = create_player_field(players, title)
+    
+    embed = {
+        "title": title,
+        "color": color,
+        "fields": [field],
+        "timestamp": datetime.now().isoformat()
+    }
+    
+    payload = {"embeds": [embed]}
+    
+    try:
+        response = requests.post(webhook_url, json=payload, timeout=10)
+        if response.status_code == 204:
+            print(f"Additional embed sent: {title}")
+        else:
+            print(f"Additional embed failed: {response.status_code}")
+    except Exception as e:
+        print(f"Additional embed error: {e}")
 
 
 def send_discord_message(message: str, webhook_url: str) -> None:
-    """Send message to Discord webhook in chunks if needed."""
+    """Fallback method for simple text messages (kept for compatibility)."""
     # Discord-safe splitting
     parts: List[str] = []
     current = ""
@@ -152,8 +240,7 @@ def main() -> None:
 
     try:
         players_data = fetch_price_data()
-        message = format_message(players_data)
-        send_discord_message(message, WEBHOOK)
+        send_discord_embeds(players_data, WEBHOOK)
     except requests.RequestException as e:
         print(f"Request error: {e}")
         sys.exit(1)

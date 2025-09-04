@@ -25,5 +25,5 @@ jobs:
           REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
           REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
           REDDIT_USER_AGENT: ${{ secrets.REDDIT_USER_AGENT }}
-          DISCORD_FPL_NEWS_WEBHOOK: ${{ secrets.DISCORD_FPL_NEWS_WEBHOOK }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_FPL_NEWS_WEBHOOK }}
         run: python fpl_news.py

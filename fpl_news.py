@@ -27,10 +27,10 @@ def main() -> None:
     # Config
     subreddit_name = "FantasyPL"
     flair = "News"
-    discord_webhook = os.getenv("DISCORD_FPL_NEWS_WEBHOOK")
+    discord_webhook = os.getenv("DISCORD_WEBHOOK")
     
     if not discord_webhook:
-        print("Error: DISCORD_FPL_NEWS_WEBHOOK environment variable not set")
+        print("Error: DISCORD_WEBHOOK environment variable not set")
         return
 
     # Time window: Yesterday 6 PM → Today 6 PM

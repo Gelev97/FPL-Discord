@@ -1,0 +1,21 @@
+name: BGA Stats to Discord
+on:
+  schedule:
+    - cron: "0 18 * * 0"   # Every Sunday at 18:00 UTC (6 PM)
+    - cron: "0 18 * * 3"   # Every Wednesday at 18:00 UTC (6 PM)
+  workflow_dispatch:       # Allows manual triggering
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - run: pip install requests beautifulsoup4
+      - run: python bga_stats.py
+        env:
+          BGA_USERNAME: ${{ secrets.BGA_USERNAME }}
+          BGA_PASSWORD: ${{ secrets.BGA_PASSWORD }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_BGA_STATS_WEBHOOK }}
