@@ -1,31 +1,59 @@
 {
   "games": {
+    "1924": {
+      "game_name": "terraformingmars",
+      "users": {
+        "matthewcrumby": {
+          "win": 10,
+          "second": 1,
+          "last": 0,
+          "total": 11
+        },
+        "xuzheng863": {
+          "win": 0,
+          "second": 7,
+          "last": 4,
+          "total": 11
+        },
+        "Gelev": {
+          "win": 0,
+          "second": 1,
+          "last": 4,
+          "total": 5
+        }
+      }
+    },
     "1148": {
       "game_name": "kingdomino",
       "users": {
         "xuzheng863": {
           "win": 0,
           "second": 3,
+          "last": 0,
           "total": 4
         },
         "Gelev": {
           "win": 3,
           "second": 1,
+          "last": 0,
           "total": 6
         },
         "matthewcrumby": {
           "win": 1,
           "second": 2,
+          "last": 2,
           "total": 6
         },
         "mashiro66": {
           "win": 1,
           "second": 0,
+          "last": 0,
           "total": 1
         },
         "stinson19980111": {
           "win": 0,
           "second": 0,
+          "last": 2,
           "total": 2
         }
       }
@@ -36,21 +64,25 @@
         "matthewcrumby": {
           "win": 11,
           "second": 0,
+          "last": 0,
           "total": 11
         },
         "xuzheng863": {
           "win": 0,
           "second": 6,
+          "last": 0,
           "total": 6
         },
         "Gelev": {
           "win": 0,
           "second": 3,
+          "last": 8,
           "total": 11
         },
         "FC YEYE": {
           "win": 0,
           "second": 0,
+          "last": 1,
           "total": 1
         }
       }
@@ -61,26 +93,31 @@
         "matthewcrumby": {
           "win": 6,
           "second": 1,
+          "last": 1,
           "total": 9
         },
         "Gelev": {
           "win": 2,
           "second": 5,
+          "last": 1,
           "total": 8
         },
         "xuzheng863": {
           "win": 1,
           "second": 0,
+          "last": 4,
           "total": 5
         },
         "FC YEYE": {
           "win": 1,
           "second": 0,
+          "last": 0,
           "total": 1
         },
         "stinson19980111": {
           "win": 0,
           "second": 3,
+          "last": 0,
           "total": 3
         }
       }
@@ -88,29 +125,34 @@
     "1204": {
       "game_name": "luckynumbers",
       "users": {
-        "xuzheng863": {
-          "win": 4,
-          "second": 3,
-          "total": 7
-        },
         "matthewcrumby": {
           "win": 5,
           "second": 3,
+          "last": 4,
           "total": 12
+        },
+        "xuzheng863": {
+          "win": 4,
+          "second": 3,
+          "last": 0,
+          "total": 7
         },
         "Gelev": {
           "win": 2,
           "second": 6,
+          "last": 3,
           "total": 11
         },
         "FC YEYE": {
           "win": 0,
           "second": 1,
+          "last": 0,
           "total": 1
         },
         "stinson19980111": {
           "win": 0,
           "second": 0,
+          "last": 1,
           "total": 1
         }
       }
@@ -121,21 +163,25 @@
         "Gelev": {
           "win": 7,
           "second": 9,
+          "last": 6,
           "total": 32
         },
         "xuzheng863": {
           "win": 6,
-          "second": 7,
-          "total": 21
+          "second": 8,
+          "last": 5,
+          "total": 22
         },
         "matthewcrumby": {
-          "win": 16,
+          "win": 17,
           "second": 11,
-          "total": 34
+          "last": 3,
+          "total": 35
         },
         "stinson19980111": {
           "win": 0,
           "second": 0,
+          "last": 3,
           "total": 3
         }
       }
@@ -146,47 +192,32 @@
         "matthewcrumby": {
           "win": 24,
           "second": 24,
+          "last": 13,
           "total": 101
         },
         "Gelev": {
           "win": 21,
           "second": 24,
+          "last": 22,
           "total": 101
         },
         "xuzheng863": {
           "win": 0,
           "second": 1,
+          "last": 4,
           "total": 7
         },
         "simonzhushiyu": {
           "win": 1,
           "second": 1,
+          "last": 12,
           "total": 24
         },
         "mashiro66": {
           "win": 1,
           "second": 2,
+          "last": 2,
           "total": 7
-        }
-      }
-    },
-    "1924": {
-      "game_name": "terraformingmars",
-      "users": {
-        "matthewcrumby": {
-          "win": 9,
-          "second": 1,
-          "total": 10
-        },
-        "xuzheng863": {
-          "win": 0,
-          "second": 6,
-          "total": 10
-        },
-        "Gelev": {
-          "win": 0,
-          "second": 1,
-          "total": 4
         }
       }
     },
@@ -196,36 +227,43 @@
         "matthewcrumby": {
           "win": 29,
           "second": 24,
+          "last": 10,
           "total": 63
         },
         "FC YEYE": {
           "win": 0,
           "second": 2,
+          "last": 0,
           "total": 2
         },
         "Gelev": {
           "win": 7,
           "second": 15,
+          "last": 8,
           "total": 34
         },
         "xuzheng863": {
           "win": 0,
           "second": 4,
+          "last": 6,
           "total": 10
         },
         "stinson19980111": {
           "win": 0,
           "second": 1,
+          "last": 1,
           "total": 2
         },
         "simonzhushiyu": {
           "win": 10,
           "second": 19,
+          "last": 11,
           "total": 40
         },
         "mashiro66": {
           "win": 5,
           "second": 5,
+          "last": 2,
           "total": 12
         }
       }
@@ -233,30 +271,35 @@
     "1320": {
       "game_name": "bang",
       "users": {
-        "stinson19980111": {
-          "win": 1,
-          "second": 0,
-          "total": 1
-        },
         "matthewcrumby": {
           "win": 3,
           "second": 0,
+          "last": 0,
           "total": 3
         },
-        "FC YEYE": {
-          "win": 0,
+        "stinson19980111": {
+          "win": 1,
           "second": 0,
+          "last": 0,
           "total": 1
-        },
-        "xuzheng863": {
-          "win": 0,
-          "second": 0,
-          "total": 2
         },
         "Gelev": {
           "win": 1,
           "second": 0,
+          "last": 2,
           "total": 3
+        },
+        "xuzheng863": {
+          "win": 0,
+          "second": 0,
+          "last": 2,
+          "total": 2
+        },
+        "FC YEYE": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 1
         }
       }
     },
@@ -266,16 +309,19 @@
         "matthewcrumby": {
           "win": 3,
           "second": 0,
+          "last": 0,
           "total": 3
         },
         "xuzheng863": {
           "win": 0,
           "second": 2,
+          "last": 0,
           "total": 2
         },
         "Gelev": {
           "win": 0,
           "second": 1,
+          "last": 2,
           "total": 3
         }
       }
@@ -286,21 +332,25 @@
         "stinson19980111": {
           "win": 4,
           "second": 3,
+          "last": 0,
           "total": 7
         },
         "Gelev": {
           "win": 0,
           "second": 1,
+          "last": 1,
           "total": 2
         },
         "matthewcrumby": {
           "win": 2,
           "second": 0,
+          "last": 1,
           "total": 3
         },
         "xuzheng863": {
           "win": 1,
           "second": 3,
+          "last": 0,
           "total": 4
         }
       }
@@ -311,26 +361,31 @@
         "matthewcrumby": {
           "win": 3,
           "second": 0,
+          "last": 2,
           "total": 7
         },
         "FC YEYE": {
           "win": 0,
           "second": 1,
+          "last": 0,
           "total": 1
         },
         "stinson19980111": {
           "win": 0,
           "second": 0,
+          "last": 0,
           "total": 1
         },
         "Gelev": {
           "win": 0,
           "second": 3,
+          "last": 2,
           "total": 6
         },
         "xuzheng863": {
           "win": 1,
           "second": 0,
+          "last": 2,
           "total": 6
         }
       }
@@ -339,19 +394,22 @@
       "game_name": "itsawonderfulworld",
       "users": {
         "matthewcrumby": {
-          "win": 3,
+          "win": 4,
           "second": 0,
-          "total": 3
+          "last": 0,
+          "total": 4
         },
         "Gelev": {
           "win": 0,
           "second": 2,
+          "last": 0,
           "total": 2
         },
         "xuzheng863": {
           "win": 0,
-          "second": 0,
-          "total": 3
+          "second": 1,
+          "last": 3,
+          "total": 4
         }
       }
     },
@@ -361,17 +419,20 @@
         "Gelev": {
           "win": 2,
           "second": 1,
+          "last": 2,
           "total": 5
         },
         "xuzheng863": {
           "win": 2,
           "second": 1,
-          "total": 6
+          "last": 4,
+          "total": 7
         },
         "matthewcrumby": {
-          "win": 2,
+          "win": 3,
           "second": 3,
-          "total": 6
+          "last": 1,
+          "total": 7
         }
       }
     },
@@ -381,16 +442,19 @@
         "Gelev": {
           "win": 2,
           "second": 6,
+          "last": 2,
           "total": 10
         },
         "matthewcrumby": {
           "win": 6,
           "second": 1,
+          "last": 3,
           "total": 10
         },
         "xuzheng863": {
           "win": 0,
           "second": 0,
+          "last": 1,
           "total": 1
         }
       }
@@ -401,16 +465,19 @@
         "Gelev": {
           "win": 2,
           "second": 1,
+          "last": 2,
           "total": 6
         },
         "matthewcrumby": {
           "win": 2,
           "second": 3,
+          "last": 0,
           "total": 6
         },
         "xuzheng863": {
           "win": 1,
           "second": 1,
+          "last": 0,
           "total": 2
         }
       }
@@ -421,26 +488,31 @@
         "matthewcrumby": {
           "win": 4,
           "second": 2,
+          "last": 1,
           "total": 7
         },
         "Gelev": {
           "win": 1,
           "second": 2,
+          "last": 3,
           "total": 6
         },
         "xuzheng863": {
           "win": 1,
           "second": 1,
+          "last": 1,
           "total": 3
         },
         "simonzhushiyu": {
           "win": 0,
           "second": 0,
+          "last": 2,
           "total": 2
         },
         "stinson19980111": {
           "win": 0,
           "second": 1,
+          "last": 0,
           "total": 1
         }
       }
@@ -451,16 +523,19 @@
         "Gelev": {
           "win": 5,
           "second": 0,
+          "last": 1,
           "total": 11
         },
         "matthewcrumby": {
           "win": 3,
           "second": 5,
+          "last": 2,
           "total": 14
         },
         "xuzheng863": {
           "win": 0,
           "second": 3,
+          "last": 3,
           "total": 7
         }
       }
@@ -471,21 +546,25 @@
         "matthewcrumby": {
           "win": 2,
           "second": 2,
+          "last": 1,
           "total": 6
         },
         "Gelev": {
           "win": 3,
           "second": 1,
+          "last": 2,
           "total": 6
         },
         "xuzheng863": {
           "win": 0,
           "second": 0,
+          "last": 1,
           "total": 1
         },
         "simonzhushiyu": {
           "win": 0,
           "second": 0,
+          "last": 0,
           "total": 1
         }
       }
@@ -496,11 +575,13 @@
         "Gelev": {
           "win": 1,
           "second": 5,
+          "last": 1,
           "total": 7
         },
         "matthewcrumby": {
           "win": 3,
           "second": 2,
+          "last": 2,
           "total": 7
         }
       }
@@ -511,16 +592,19 @@
         "xuzheng863": {
           "win": 1,
           "second": 0,
+          "last": 1,
           "total": 2
         },
         "matthewcrumby": {
           "win": 4,
           "second": 2,
+          "last": 0,
           "total": 8
         },
         "Gelev": {
           "win": 1,
           "second": 3,
+          "last": 4,
           "total": 8
         }
       }
@@ -531,11 +615,13 @@
         "matthewcrumby": {
           "win": 2,
           "second": 0,
+          "last": 0,
           "total": 2
         },
         "Gelev": {
           "win": 0,
           "second": 2,
+          "last": 0,
           "total": 2
         }
       }
@@ -546,11 +632,13 @@
         "matthewcrumby": {
           "win": 2,
           "second": 0,
+          "last": 0,
           "total": 2
         },
         "Gelev": {
           "win": 0,
           "second": 2,
+          "last": 0,
           "total": 2
         }
       }
@@ -561,11 +649,13 @@
         "matthewcrumby": {
           "win": 2,
           "second": 1,
+          "last": 1,
           "total": 5
         },
         "Gelev": {
           "win": 2,
           "second": 1,
+          "last": 2,
           "total": 5
         }
       }
@@ -576,11 +666,13 @@
         "matthewcrumby": {
           "win": 2,
           "second": 2,
+          "last": 1,
           "total": 5
         },
         "Gelev": {
           "win": 2,
           "second": 0,
+          "last": 2,
           "total": 5
         }
       }
@@ -591,21 +683,25 @@
         "matthewcrumby": {
           "win": 6,
           "second": 2,
+          "last": 3,
           "total": 13
         },
         "Gelev": {
           "win": 4,
           "second": 6,
+          "last": 2,
           "total": 13
         },
         "mashiro66": {
           "win": 0,
           "second": 5,
+          "last": 2,
           "total": 7
         },
         "simonzhushiyu": {
           "win": 0,
           "second": 0,
+          "last": 1,
           "total": 1
         }
       }
@@ -616,11 +712,13 @@
         "matthewcrumby": {
           "win": 2,
           "second": 0,
+          "last": 0,
           "total": 2
         },
         "Gelev": {
           "win": 0,
           "second": 2,
+          "last": 0,
           "total": 2
         }
       }
@@ -631,11 +729,13 @@
         "matthewcrumby": {
           "win": 14,
           "second": 7,
+          "last": 2,
           "total": 23
         },
         "Gelev": {
           "win": 2,
           "second": 4,
+          "last": 17,
           "total": 23
         }
       }
@@ -646,21 +746,25 @@
         "matthewcrumby": {
           "win": 5,
           "second": 4,
+          "last": 1,
           "total": 13
         },
         "Gelev": {
           "win": 4,
           "second": 5,
+          "last": 1,
           "total": 12
         },
         "mashiro66": {
           "win": 0,
           "second": 0,
+          "last": 0,
           "total": 1
         },
         "simonzhushiyu": {
           "win": 2,
           "second": 2,
+          "last": 7,
           "total": 11
         }
       }
@@ -671,11 +775,13 @@
         "matthewcrumby": {
           "win": 0,
           "second": 4,
+          "last": 0,
           "total": 4
         },
         "Gelev": {
           "win": 2,
           "second": 0,
+          "last": 2,
           "total": 4
         }
       }
@@ -686,11 +792,13 @@
         "matthewcrumby": {
           "win": 0,
           "second": 1,
+          "last": 0,
           "total": 1
         },
         "Gelev": {
           "win": 0,
           "second": 0,
+          "last": 1,
           "total": 1
         }
       }
@@ -701,11 +809,13 @@
         "matthewcrumby": {
           "win": 2,
           "second": 1,
+          "last": 0,
           "total": 3
         },
         "stinson19980111": {
           "win": 1,
           "second": 2,
+          "last": 0,
           "total": 3
         }
       }
@@ -716,11 +826,13 @@
         "stinson19980111": {
           "win": 1,
           "second": 0,
+          "last": 0,
           "total": 1
         },
         "matthewcrumby": {
           "win": 1,
           "second": 0,
+          "last": 0,
           "total": 1
         }
       }
@@ -731,11 +843,13 @@
         "matthewcrumby": {
           "win": 2,
           "second": 0,
+          "last": 0,
           "total": 2
         },
         "simonzhushiyu": {
           "win": 0,
           "second": 2,
+          "last": 0,
           "total": 2
         }
       }
@@ -746,15 +860,17 @@
         "stinson19980111": {
           "win": 2,
           "second": 2,
+          "last": 0,
           "total": 4
         },
         "xuzheng863": {
           "win": 2,
           "second": 2,
+          "last": 0,
           "total": 4
         }
       }
     }
   },
-  "last_update": "2025-09-04 10:46:06"
+  "last_update": "2025-09-04 23:01:41"
 }

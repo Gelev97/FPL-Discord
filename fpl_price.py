@@ -3,8 +3,7 @@ import re
 import sys
 import requests
 from bs4 import BeautifulSoup
-from datetime import datetime
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Any, Optional, Match
 
 WEBHOOK: Optional[str] = os.environ.get("DISCORD_WEBHOOK")
 URL: str = "https://www.livefpl.net/prices"
@@ -23,29 +22,29 @@ def get_prediction_value(player: Dict[str, Any]) -> float:
 
 def fetch_price_data() -> List[Dict[str, Any]]:
     """Fetch and parse player price data from LiveFPL."""
-    response = requests.get(URL, headers=HEADERS)
+    response: requests.Response = requests.get(URL, headers=HEADERS)
     response.raise_for_status()
-    html = response.text
-    soup = BeautifulSoup(html, "html.parser")
-    page_text = soup.get_text()
+    html: str = response.text
+    soup: BeautifulSoup = BeautifulSoup(html, "html.parser")
+    page_text: str = soup.get_text()
 
     # Split blocks by price line (each player block starts with £)
-    blocks = re.split(r'\n(?=.*£[0-9.]+)', page_text)
+    blocks: List[str] = re.split(r'\n(?=.*£[0-9.]+)', page_text)
     players_data: List[Dict[str, Any]] = []
 
     for block in blocks:
-        lines = [line.strip() for line in block.splitlines() if line.strip()]
+        lines: List[str] = [line.strip() for line in block.splitlines() if line.strip()]
         if not lines or '£' not in block:
             continue
 
         # Find price line
-        pos_price_line = next((l for l in lines if '£' in l), '')
-        price_match = re.search(r'£[0-9.]+', pos_price_line)
-        price = price_match.group(0) if price_match else ''
+        pos_price_line: str = next((l for l in lines if '£' in l), '')
+        price_match: Optional[Match[str]] = re.search(r'£[0-9.]+', pos_price_line)
+        price: str = price_match.group(0) if price_match else ''
 
         # Find position
-        pos_match = re.search(r'\b(GK|DEF|MID|FW)\b', pos_price_line)
-        position = pos_match.group(1) if pos_match else ''
+        pos_match: Optional[Match[str]] = re.search(r'\b(GK|DEF|MID|FW)\b', pos_price_line)
+        position: str = pos_match.group(1) if pos_match else ''
         if not position:
             for line in lines:
                 if line in ['GK', 'DEF', 'MID', 'FW']:
@@ -54,25 +53,25 @@ def fetch_price_data() -> List[Dict[str, Any]]:
 
         # Find name (line after price line)
         try:
-            idx = lines.index(pos_price_line)
-            name = lines[idx + 1] if idx + 1 < len(lines) else ''
+            idx: int = lines.index(pos_price_line)
+            name: str = lines[idx + 1] if idx + 1 < len(lines) else ''
         except ValueError:
-            name = ''
+            name: str = ''
 
         # Progress, prediction, progress per hour
-        prog_matches = [l for l in lines if re.match(r'[+-]?[0-9.]+%', l)]
-        progress_now = prog_matches[0] if len(prog_matches) > 0 else ''
-        prediction = prog_matches[1] if len(prog_matches) > 1 else ''
-        progress_per_hour = prog_matches[-1] if len(prog_matches) > 0 else ''
+        prog_matches: List[str] = [l for l in lines if re.match(r'[+-]?[0-9.]+%', l)]
+        progress_now: str = prog_matches[0] if len(prog_matches) > 0 else ''
+        prediction: str = prog_matches[1] if len(prog_matches) > 1 else ''
+        progress_per_hour: str = prog_matches[-1] if len(prog_matches) > 0 else ''
 
         # Prediction time (e.g., '>2 days', '>5 hours', 'Tonight', 'Tomorrow')
-        prediction_time = next((l for l in lines if 'day' in l or 'hour' in l or 'Tonight' in l or 'Tomorrow' in l), '')
+        prediction_time: str = next((l for l in lines if 'day' in l or 'hour' in l or 'Tonight' in l or 'Tomorrow' in l), '')
 
         # Team
-        team_candidates = [l for l in lines if l not in [pos_price_line, name, price] 
+        team_candidates: List[str] = [l for l in lines if l not in [pos_price_line, name, price] 
                            and not re.match(r'[+-]?[0-9.]+%', l) 
                            and 'day' not in l and 'hour' not in l and 'Tonight' not in l and 'Tomorrow' not in l]
-        team = team_candidates[0] if team_candidates else ''
+        team: str = team_candidates[0] if team_candidates else ''
 
         players_data.append({
             'name': name,
@@ -88,140 +87,141 @@ def fetch_price_data() -> List[Dict[str, Any]]:
 
     return players_data
 
+def progress_bar(value: str, total_blocks: int = 20) -> str:
+    ori_value: str = value
+    numeric_value: float = abs(float(value[:-1]))
+    clamped_value: float = min(numeric_value, 100)
+    filled_blocks: int = int(clamped_value / 100 * total_blocks)
+    empty_blocks: int = total_blocks - filled_blocks
+    bar: str = "[" + "-" * filled_blocks + " " * empty_blocks + "]"
+    return f"`{bar}` {ori_value}"
 
-def create_player_field(players: List[Dict[str, Any]], title: str) -> Dict[str, Any]:
-    """Create a Discord embed field for players."""
-    if not players:
-        return {"name": title, "value": "No players found", "inline": False}
-    
-    value_lines = []
-    for i, p in enumerate(players[:10], 1):  # Limit to top 10
-        line = (f"{i}. **{p['name']}** ({p['position']}) {p['price']} - {p['team']}\n"
-                f"   Now: {p['progress_now']}, Pred: {p['prediction']}, "
-                f"Time: {p['prediction_time']}")
-        value_lines.append(line)
-    
-    # Discord field value limit is 1024 characters
-    value = "\n\n".join(value_lines)
-    if len(value) > 1024:
-        # Truncate and add indicator
-        value = value[:1000] + "...\n*(truncated)*"
-    
-    return {"name": title, "value": value, "inline": False}
-
-
-def send_discord_embeds(players_data: List[Dict[str, Any]], webhook_url: str) -> None:
-    """Send FPL data as Discord embeds."""
+def format_message(players_data: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """Format player data into Discord embeds (separate for risers and fallers)."""
     if not players_data:
-        # Send error embed
-        embed = {
-            "title": "FPL Price Predictions",
-            "description": "No player data found",
-            "color": 0xe74c3c,  # Red
-            "timestamp": datetime.now().isoformat()
-        }
-        payload = {"embeds": [embed]}
-        requests.post(webhook_url, json=payload)
-        return
+        return [{
+            "title": "📊 Daily LiveFPL Price Predictions",
+            "description": "❌ No player data found",
+            "color": 0xff0000
+        }]
 
-    # Sort players
+    # Sort by prediction
     players_data.sort(key=lambda x: x['prediction_value'], reverse=True)
-    
-    # Get risers and fallers
-    risers = [p for p in players_data if p['prediction_value'] > 0]
-    fallers = [p for p in players_data if p['prediction_value'] < 0]
+
+    # Top 10 risers and fallers
+    risers: List[Dict[str, Any]] = [p for p in players_data if p['prediction_value'] > 0][:10]
+    fallers: List[Dict[str, Any]] = [p for p in players_data if p['prediction_value'] < 0]
     fallers.sort(key=lambda x: x['prediction_value'])
+    fallers = fallers[:10]
 
-    # Create main embed
-    embed = {
-        "title": "Daily FPL Price Predictions",
-        "description": f"Top predicted price changes from LiveFPL",
-        "color": 0x3498db
-    }
-
-    # Add risers field
+    embeds: List[Dict[str, Any]] = []
+    
+    # Risers embed
     if risers:
-        risers_field = create_player_field(risers[:5], "📈 Top 5 Predicted Risers")
-        embed["fields"].append(risers_field)
+        riser_list: List[str] = []
+        for i, p in enumerate(risers, 1):
+            riser_list.append(
+                f"{i}. **{p['name']}** ({p['position']}) {p['price']} - {p['team']}\n"
+                f"{progress_bar(p['progress_now'])}\n"
+                f"Pred: {p['prediction']}, Time: {p['prediction_time']}, /hr: {p['progress_per_hour']}"
+            )
+        
+        embeds.append({
+            "title": "📊 Daily LiveFPL Price Predictions",
+            "fields": [{
+                "name": "📈 TOP 10 PREDICTED RISERS",
+                "value": '\n\n'.join(riser_list),
+                "inline": False
+            }],
+            "color": 0x2ecc71,  # Green for risers
+            "footer": {
+                "text": "LiveFPL Price Movement Analysis"
+            }
+        })
 
-    # Add fallers field  
+    # Fallers embed
     if fallers:
-        fallers_field = create_player_field(fallers[:5], "📉 Top 5 Predicted Fallers")
-        embed["fields"].append(fallers_field)
+        faller_list: List[str] = []
+        for i, p in enumerate(fallers, 1):
+            faller_list.append(
+                f"{i}. **{p['name']}** ({p['position']}) {p['price']} - {p['team']}\n"
+                f"{progress_bar(p['progress_now'])}\n"
+                f"Pred: {p['prediction']}, Time: {p['prediction_time']}, /hr: {p['progress_per_hour']}"
+            )
+        
+        embeds.append({
+            "title": "📊 Daily LiveFPL Price Predictions",
+            "fields": [{
+                "name": "📉 TOP 10 PREDICTED FALLERS",
+                "value": '\n\n'.join(faller_list),
+                "inline": False
+            }],
+            "color": 0xe74c3c,  # Red for fallers
+            "footer": {
+                "text": "LiveFPL Price Movement Analysis"
+            }
+        })
 
-    # Add summary field
-    summary_value = f"Total Risers: {len(risers)}\nTotal Fallers: {len(fallers)}\nData Points: {len(players_data)}"
-    embed["fields"].append({
-        "name": "Summary",
-        "value": summary_value,
-        "inline": True
-    })
+    return embeds
 
-    # Send main embed
-    payload = {"embeds": [embed]}
+
+def send_discord_message(embed_data: Dict[str, Any], webhook_url: str) -> None:
+    """Send embed to Discord webhook with field splitting if needed."""
+    
+    # Check if any field exceeds Discord's 1024 character limit
+    for field in embed_data.get('fields', []):
+        if len(field['value']) > 1024:
+            # Split large fields
+            lines = field['value'].split('\n\n')
+            current_value: str = ""
+            field_parts: List[str] = []
+            
+            for line in lines:
+                if len(current_value) + len(line) + 2 > 1024:  # +2 for \n\n
+                    if current_value:
+                        field_parts.append(current_value.strip())
+                    current_value = line + '\n\n'
+                else:
+                    current_value += line + '\n\n'
+            
+            if current_value:
+                field_parts.append(current_value.strip())
+            
+            # Replace original field with split fields
+            field_index: int = embed_data['fields'].index(field)
+            embed_data['fields'].pop(field_index)
+
+            for i, part in enumerate(field_parts):
+                # Original name for first part, zero-width space for continued parts
+                part_name: str = field['name'] if i == 0 else "\u200B\u2060"
+                part_value: str = part if i == 0 else f"\u00A0\n{part}"  # non-breaking space + newline
+                
+                embed_data['fields'].insert(field_index + i, {
+                    "name": part_name,
+                    "value": part_value,
+                    "inline": field['inline']
+                })
+
+    payload: Dict[str, Any] = {"embeds": [embed_data]}
     
     try:
-        response = requests.post(webhook_url, json=payload, timeout=10)
-        if response.status_code == 204:
+        discord_response = requests.post(webhook_url, json=payload, timeout=10)
+        if discord_response.status_code == 204:
             print("Discord embed sent successfully")
         else:
-            print(f"Discord embed failed: {response.status_code}")
+            print(f"Discord embed failed: {discord_response.status_code}")
     except Exception as e:
         print(f"Discord embed error: {e}")
 
-    # If there are more than 5 risers/fallers, send additional embeds
-    if len(risers) > 5:
-        send_additional_embed(risers[5:10], "📈 More Predicted Risers (6-10)", 0x27ae60, webhook_url)
-    
-    if len(fallers) > 5:
-        send_additional_embed(fallers[5:10], "📉 More Predicted Fallers (6-10)", 0xe67e22, webhook_url)
 
-
-def send_additional_embed(players: List[Dict[str, Any]], title: str, color: int, webhook_url: str) -> None:
-    """Send additional embed for extended player lists."""
-    if not players:
-        return
-    
-    field = create_player_field(players, title)
-    
-    embed = {
-        "title": title,
-        "color": color,
-        "fields": [field],
-        "timestamp": datetime.now().isoformat()
-    }
-    
-    payload = {"embeds": [embed]}
-    
-    try:
-        response = requests.post(webhook_url, json=payload, timeout=10)
-        if response.status_code == 204:
-            print(f"Additional embed sent: {title}")
-        else:
-            print(f"Additional embed failed: {response.status_code}")
-    except Exception as e:
-        print(f"Additional embed error: {e}")
-
-
-def send_discord_message(message: str, webhook_url: str) -> None:
-    """Fallback method for simple text messages (kept for compatibility)."""
-    # Discord-safe splitting
-    parts: List[str] = []
-    current = ""
-    for block in message.split("\n\n"):
-        block_with_newline = block + "\n\n"
-        if len(current) + len(block_with_newline) > 1900:
-            parts.append(current.strip())
-            current = block_with_newline
-        else:
-            current += block_with_newline
-    if current:
-        parts.append(current.strip())
-
-    for i, part in enumerate(parts):
-        discord_response = requests.post(webhook_url, json={"content": part})
-        print(f"Discord message {i+1}: {discord_response.status_code}")
-
+def send_discord_messages(message: List[Dict[str, Any]], webhook_url: str) -> None:
+    """Send Discord messages for risers and fallers separately."""    
+    for embed_data in message:
+        send_discord_message(embed_data, webhook_url)
+        
+        # Small delay between messages to avoid rate limiting
+        import time
+        time.sleep(0.5)
 
 def main() -> None:
     """Main function to run the FPL price prediction script."""
@@ -231,14 +231,14 @@ def main() -> None:
 
     try:
         players_data = fetch_price_data()
-        send_discord_embeds(players_data, WEBHOOK)
+        message = format_message(players_data)
+        send_discord_messages(message, WEBHOOK)
     except requests.RequestException as e:
         print(f"Request error: {e}")
         sys.exit(1)
     except Exception as e:
         print(f"Parsing error: {e}")
         sys.exit(1)
-
 
 if __name__ == "__main__":
     main()
