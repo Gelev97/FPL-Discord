@@ -309,8 +309,6 @@ class BGAGameTracker:
             max_win: int = 0
             max_user: str = ""
             max_total: int = 0
-            max_second: int = 0
-            max_last: float = float('inf')  # Start with infinity for "less is better"
 
             for user, result in common_game['users'].items():
                 if user not in stats_report[elo_category]:
@@ -329,6 +327,10 @@ class BGAGameTracker:
                 max_win_ratio = max_win / max_total if max_total > 0 else 0
 
                 if current_win_ratio > max_win_ratio:
+                    max_win = result['win']
+                    max_user = user
+                    max_total = result['total']
+                elif current_win_ratio == max_win_ratio and result['win'] > max_win:
                     max_win = result['win']
                     max_user = user
                     max_total = result['total']
