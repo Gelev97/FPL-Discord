@@ -1,5 +1,28 @@
 {
   "games": {
+    "1": {
+      "game_name": "carcassonne",
+      "users": {
+        "Gelev": {
+          "win": 1,
+          "second": 1,
+          "last": 2,
+          "total": 4
+        },
+        "xuzheng863": {
+          "win": 0,
+          "second": 3,
+          "last": 0,
+          "total": 3
+        },
+        "matthewcrumby": {
+          "win": 3,
+          "second": 0,
+          "last": 1,
+          "total": 4
+        }
+      }
+    },
     "1924": {
       "game_name": "terraformingmars",
       "users": {
@@ -271,56 +294,33 @@
     "1320": {
       "game_name": "bang",
       "users": {
-        "matthewcrumby": {
-          "win": 3,
-          "second": 0,
-          "last": 0,
-          "total": 3
-        },
         "stinson19980111": {
           "win": 1,
           "second": 0,
           "last": 0,
           "total": 1
         },
-        "Gelev": {
-          "win": 1,
-          "second": 0,
-          "last": 2,
-          "total": 3
-        },
-        "xuzheng863": {
-          "win": 0,
-          "second": 0,
-          "last": 2,
-          "total": 2
-        },
-        "FC YEYE": {
-          "win": 0,
-          "second": 0,
-          "last": 1,
-          "total": 1
-        }
-      }
-    },
-    "1": {
-      "game_name": "carcassonne",
-      "users": {
         "matthewcrumby": {
           "win": 3,
           "second": 0,
           "last": 0,
           "total": 3
         },
+        "FC YEYE": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 1
+        },
         "xuzheng863": {
           "win": 0,
-          "second": 2,
-          "last": 0,
+          "second": 0,
+          "last": 2,
           "total": 2
         },
         "Gelev": {
-          "win": 0,
-          "second": 1,
+          "win": 1,
+          "second": 0,
           "last": 2,
           "total": 3
         }
@@ -820,23 +820,6 @@
         }
       }
     },
-    "1937": {
-      "game_name": "wordtraveler",
-      "users": {
-        "stinson19980111": {
-          "win": 1,
-          "second": 0,
-          "last": 0,
-          "total": 1
-        },
-        "matthewcrumby": {
-          "win": 1,
-          "second": 0,
-          "last": 0,
-          "total": 1
-        }
-      }
-    },
     "1266": {
       "game_name": "sevenwondersduel",
       "users": {
@@ -872,5 +855,5 @@
       }
     }
   },
-  "last_update": "2025-09-04 23:01:41"
+  "last_update": "2025-09-04 23:29:59"
 }
