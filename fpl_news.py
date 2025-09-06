@@ -1,12 +1,40 @@
+"""Fantasy Premier League news fetcher and Discord notifier.
+
+This module fetches Fantasy Premier League news posts from the FantasyPL subreddit
+and sends them to a Discord channel via webhook. It monitors posts with the "News"
+flair within a specific time window (yesterday 6 PM to today 6 PM) and forwards
+them to Discord with proper formatting.
+
+Typical usage example:
+
+    python fpl_news.py
+
+Environment variables required:
+    REDDIT_CLIENT_ID: Reddit API client ID
+    REDDIT_CLIENT_SECRET: Reddit API client secret
+    REDDIT_USER_AGENT: Reddit API user agent string
+    DISCORD_WEBHOOK: Discord webhook URL for sending messages
+"""
+
 import os
 import time
 import praw
 import requests
 from datetime import datetime, timedelta, timezone
-from typing import Optional
 
 def send_to_discord(content: str, webhook_url: str) -> None:
-    """Send message to Discord webhook."""
+    """Send a message to a Discord channel via webhook.
+
+    Posts a message to Discord using the provided webhook URL. The message is sent
+    as a JSON payload with a timeout of 10 seconds.
+
+    Args:
+        content: The message content to send to Discord.
+        webhook_url: The Discord webhook URL to post the message to.
+
+    Raises:
+        requests.RequestException: If the webhook request fails or times out.
+    """
     try:
         payload = {"content": content}
         response = requests.post(webhook_url, json=payload, timeout=10)
@@ -16,7 +44,27 @@ def send_to_discord(content: str, webhook_url: str) -> None:
         raise
 
 def main() -> None:
-    """Main function to fetch FPL news from Reddit and send to Discord."""
+    """Fetch FPL news from Reddit and send to Discord.
+
+    Searches the FantasyPL subreddit for posts with "News" flair within a 24-hour
+    window (yesterday 6 PM to today 6 PM UTC) and forwards them to Discord via
+    webhook. Posts are sent with their title and Reddit permalink.
+
+    The function performs the following steps:
+    1. Initializes Reddit API connection using environment variables
+    2. Defines time window for post filtering
+    3. Searches for posts with "News" flair in the specified timeframe
+    4. Sends formatted messages to Discord with 2-second delays between posts
+
+    Raises:
+        Exception: If Reddit API connection fails or Discord webhook sending fails.
+
+    Environment Variables:
+        REDDIT_CLIENT_ID: Reddit API client ID
+        REDDIT_CLIENT_SECRET: Reddit API client secret
+        REDDIT_USER_AGENT: Reddit API user agent string
+        DISCORD_WEBHOOK: Discord webhook URL for notifications
+    """
     # Reddit setup
     reddit = praw.Reddit(
         client_id=os.getenv("REDDIT_CLIENT_ID"),
@@ -28,7 +76,7 @@ def main() -> None:
     subreddit_name = "FantasyPL"
     flair = "News"
     discord_webhook = os.getenv("DISCORD_WEBHOOK")
-    
+
     if not discord_webhook:
         print("Error: DISCORD_WEBHOOK environment variable not set")
         return
