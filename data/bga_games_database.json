@@ -167,9 +167,9 @@
       "users": {
         "matthewcrumby": {
           "win": 18,
-          "second": 7,
+          "second": 8,
           "last": 3,
-          "total": 31
+          "total": 32
         },
         "Gelev": {
           "win": 6,
@@ -184,10 +184,10 @@
           "total": 10
         },
         "FC YEYE": {
-          "win": 5,
+          "win": 6,
           "second": 4,
           "last": 4,
-          "total": 14
+          "total": 15
         },
         "stinson19980111": {
           "win": 0,
@@ -702,6 +702,12 @@
         "xuzheng863": {
           "win": 0,
           "second": 1,
+          "last": 1,
+          "total": 2
+        },
+        "stinson19980111": {
+          "win": 1,
+          "second": 0,
           "last": 0,
           "total": 1
         }
@@ -999,7 +1005,64 @@
           "total": 3
         }
       }
+    },
+    "1939": {
+      "game_name": "explodingkittens",
+      "users": {
+        "stinson19980111": {
+          "win": 6,
+          "second": 0,
+          "last": 1,
+          "total": 7
+        },
+        "matthewcrumby": {
+          "win": 1,
+          "second": 0,
+          "last": 6,
+          "total": 7
+        }
+      }
+    },
+    "1167": {
+      "game_name": "sushigo",
+      "users": {
+        "matthewcrumby": {
+          "win": 1,
+          "second": 0,
+          "last": 0,
+          "total": 1
+        },
+        "stinson19980111": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 1
+        }
+      }
+    },
+    "2410": {
+      "game_name": "forestshuffledartmoor",
+      "users": {
+        "stinson19980111": {
+          "win": 2,
+          "second": 0,
+          "last": 1,
+          "total": 3
+        },
+        "matthewcrumby": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 1
+        },
+        "xuzheng863": {
+          "win": 1,
+          "second": 0,
+          "last": 1,
+          "total": 2
+        }
+      }
     }
   },
-  "last_update": "2025-09-14 18:30:56"
+  "last_update": "2025-09-17 18:14:35"
 }
