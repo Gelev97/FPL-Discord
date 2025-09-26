@@ -236,16 +236,16 @@
       "game_name": "sevenwonders",
       "users": {
         "matthewcrumby": {
-          "win": 26,
-          "second": 25,
+          "win": 30,
+          "second": 26,
           "last": 13,
-          "total": 105
+          "total": 112
         },
         "Gelev": {
-          "win": 22,
-          "second": 25,
-          "last": 22,
-          "total": 105
+          "win": 23,
+          "second": 28,
+          "last": 25,
+          "total": 112
         },
         "xuzheng863": {
           "win": 0,
@@ -1208,5 +1208,5 @@
       }
     }
   },
-  "last_update": "2025-09-24 18:15:34"
+  "last_update": "2025-09-26 19:15:36"
 }
