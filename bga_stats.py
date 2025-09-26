@@ -38,7 +38,7 @@ class BGAGameTracker:
 		self._base_url = "https://boardgamearena.com"
 
 		# Game IDs to exclude (Turing Machine, Hanabi, wordtraveler, sail, skyteam, daybreak)
-        self._exclude_game_ids = ["1015", "1804", "1937", "2092", "1879", "1799"],
+		self._exclude_game_ids = ["1015", "1804", "1937", "2092", "1879", "1799"]
 		self._session = requests.Session()
 		self._request_token = None
 		self._user_ids = []
