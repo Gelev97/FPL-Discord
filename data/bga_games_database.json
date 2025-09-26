@@ -1173,57 +1173,6 @@
         }
       }
     },
-    "2092": {
-      "game_name": "sail",
-      "users": {
-        "stinson19980111": {
-          "win": 1,
-          "second": 0,
-          "last": 0,
-          "total": 1
-        },
-        "matthewcrumby": {
-          "win": 1,
-          "second": 0,
-          "last": 0,
-          "total": 1
-        }
-      }
-    },
-    "1879": {
-      "game_name": "skyteam",
-      "users": {
-        "stinson19980111": {
-          "win": 2,
-          "second": 0,
-          "last": 0,
-          "total": 2
-        },
-        "matthewcrumby": {
-          "win": 2,
-          "second": 0,
-          "last": 0,
-          "total": 2
-        }
-      }
-    },
-    "1799": {
-      "game_name": "daybreak",
-      "users": {
-        "stinson19980111": {
-          "win": 2,
-          "second": 0,
-          "last": 0,
-          "total": 2
-        },
-        "matthewcrumby": {
-          "win": 2,
-          "second": 0,
-          "last": 0,
-          "total": 2
-        }
-      }
-    },
     "2314": {
       "game_name": "coffeerush",
       "users": {
