@@ -166,22 +166,22 @@
       "game_name": "seasaltpaper",
       "users": {
         "matthewcrumby": {
-          "win": 19,
+          "win": 20,
           "second": 11,
-          "last": 5,
-          "total": 38
+          "last": 6,
+          "total": 40
         },
         "Gelev": {
           "win": 6,
-          "second": 13,
+          "second": 14,
           "last": 9,
-          "total": 30
+          "total": 31
         },
         "xuzheng863": {
           "win": 1,
           "second": 2,
-          "last": 6,
-          "total": 11
+          "last": 7,
+          "total": 12
         },
         "FC YEYE": {
           "win": 9,
@@ -191,9 +191,9 @@
         },
         "stinson19980111": {
           "win": 0,
-          "second": 5,
+          "second": 6,
           "last": 5,
-          "total": 11
+          "total": 12
         }
       }
     },
@@ -1073,10 +1073,10 @@
       "game_name": "gammelogic",
       "users": {
         "matthewcrumby": {
-          "win": 15,
+          "win": 16,
           "second": 2,
           "last": 1,
-          "total": 18
+          "total": 19
         },
         "simonzhushiyu": {
           "win": 0,
@@ -1086,9 +1086,9 @@
         },
         "Gelev": {
           "win": 2,
-          "second": 5,
+          "second": 6,
           "last": 4,
-          "total": 11
+          "total": 12
         },
         "FC YEYE": {
           "win": 0,
@@ -1127,15 +1127,15 @@
         },
         "matthewcrumby": {
           "win": 4,
-          "second": 2,
+          "second": 3,
           "last": 2,
-          "total": 12
+          "total": 13
         },
         "stinson19980111": {
           "win": 1,
           "second": 0,
           "last": 3,
-          "total": 4
+          "total": 5
         }
       }
     },
@@ -1206,7 +1206,75 @@
           "total": 1
         }
       }
+    },
+    "1662": {
+      "game_name": "blackjack",
+      "users": {
+        "matthewcrumby": {
+          "win": 1,
+          "second": 0,
+          "last": 1,
+          "total": 2
+        },
+        "Gelev": {
+          "win": 1,
+          "second": 0,
+          "last": 1,
+          "total": 2
+        }
+      }
+    },
+    "1384": {
+      "game_name": "viticulture",
+      "users": {
+        "matthewcrumby": {
+          "win": 1,
+          "second": 0,
+          "last": 0,
+          "total": 1
+        },
+        "stinson19980111": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 1
+        }
+      }
+    },
+    "1526": {
+      "game_name": "rainbow",
+      "users": {
+        "matthewcrumby": {
+          "win": 1,
+          "second": 0,
+          "last": 0,
+          "total": 1
+        },
+        "stinson19980111": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 1
+        }
+      }
+    },
+    "1248": {
+      "game_name": "thecrew",
+      "users": {
+        "stinson19980111": {
+          "win": 1,
+          "second": 0,
+          "last": 0,
+          "total": 1
+        },
+        "matthewcrumby": {
+          "win": 1,
+          "second": 0,
+          "last": 0,
+          "total": 1
+        }
+      }
     }
   },
-  "last_update": "2025-09-26 19:15:36"
+  "last_update": "2025-09-28 18:31:38"
 }
