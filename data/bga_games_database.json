@@ -1257,23 +1257,6 @@
           "total": 2
         }
       }
-    },
-    "1248": {
-      "game_name": "thecrew",
-      "users": {
-        "stinson19980111": {
-          "win": 1,
-          "second": 0,
-          "last": 0,
-          "total": 1
-        },
-        "matthewcrumby": {
-          "win": 1,
-          "second": 0,
-          "last": 0,
-          "total": 1
-        }
-      }
     }
   },
   "last_update": "2025-10-01 18:15:24"
