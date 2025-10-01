@@ -523,8 +523,8 @@
         "matthewcrumby": {
           "win": 4,
           "second": 3,
-          "last": 1,
-          "total": 8
+          "last": 2,
+          "total": 9
         },
         "Gelev": {
           "win": 2,
@@ -545,10 +545,10 @@
           "total": 2
         },
         "stinson19980111": {
-          "win": 0,
+          "win": 1,
           "second": 1,
           "last": 0,
-          "total": 1
+          "total": 2
         },
         "FC YEYE": {
           "win": 0,
@@ -1247,14 +1247,14 @@
         "matthewcrumby": {
           "win": 1,
           "second": 0,
-          "last": 0,
-          "total": 1
+          "last": 1,
+          "total": 2
         },
         "stinson19980111": {
-          "win": 0,
+          "win": 1,
           "second": 0,
           "last": 1,
-          "total": 1
+          "total": 2
         }
       }
     },
@@ -1276,5 +1276,5 @@
       }
     }
   },
-  "last_update": "2025-09-28 18:31:38"
+  "last_update": "2025-10-01 18:15:24"
 }
