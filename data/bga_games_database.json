@@ -27,22 +27,22 @@
       "game_name": "castlecombo",
       "users": {
         "Gelev": {
-          "win": 10,
+          "win": 12,
           "second": 9,
-          "last": 9,
-          "total": 38
+          "last": 11,
+          "total": 42
         },
         "matthewcrumby": {
-          "win": 19,
-          "second": 14,
+          "win": 21,
+          "second": 16,
           "last": 4,
-          "total": 42
+          "total": 46
         },
         "xuzheng863": {
           "win": 7,
-          "second": 8,
+          "second": 10,
           "last": 7,
-          "total": 27
+          "total": 29
         },
         "stinson19980111": {
           "win": 0,
@@ -166,10 +166,10 @@
       "game_name": "seasaltpaper",
       "users": {
         "matthewcrumby": {
-          "win": 20,
+          "win": 21,
           "second": 11,
           "last": 6,
-          "total": 40
+          "total": 41
         },
         "Gelev": {
           "win": 6,
@@ -179,9 +179,9 @@
         },
         "xuzheng863": {
           "win": 1,
-          "second": 2,
+          "second": 3,
           "last": 7,
-          "total": 12
+          "total": 13
         },
         "FC YEYE": {
           "win": 9,
@@ -981,10 +981,10 @@
       "game_name": "arnak",
       "users": {
         "matthewcrumby": {
-          "win": 5,
+          "win": 6,
           "second": 0,
           "last": 0,
-          "total": 5
+          "total": 6
         },
         "stinson19980111": {
           "win": 0,
@@ -995,14 +995,14 @@
         "Gelev": {
           "win": 0,
           "second": 0,
-          "last": 4,
-          "total": 4
+          "last": 5,
+          "total": 5
         },
         "xuzheng863": {
           "win": 0,
-          "second": 3,
+          "second": 4,
           "last": 0,
-          "total": 3
+          "total": 4
         }
       }
     },
@@ -1126,10 +1126,10 @@
           "total": 6
         },
         "matthewcrumby": {
-          "win": 4,
+          "win": 5,
           "second": 3,
           "last": 2,
-          "total": 13
+          "total": 14
         },
         "stinson19980111": {
           "win": 1,
@@ -1259,5 +1259,5 @@
       }
     }
   },
-  "last_update": "2025-10-01 18:15:24"
+  "last_update": "2025-10-05 18:32:13"
 }
