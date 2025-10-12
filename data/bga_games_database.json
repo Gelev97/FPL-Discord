@@ -166,16 +166,16 @@
       "game_name": "seasaltpaper",
       "users": {
         "matthewcrumby": {
-          "win": 21,
+          "win": 23,
           "second": 11,
           "last": 6,
-          "total": 41
+          "total": 43
         },
         "Gelev": {
           "win": 6,
-          "second": 14,
-          "last": 9,
-          "total": 31
+          "second": 15,
+          "last": 10,
+          "total": 33
         },
         "xuzheng863": {
           "win": 1,
@@ -1259,5 +1259,5 @@
       }
     }
   },
-  "last_update": "2025-10-08 18:15:48"
+  "last_update": "2025-10-12 18:32:02"
 }
