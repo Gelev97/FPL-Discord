@@ -1257,7 +1257,41 @@
           "total": 2
         }
       }
+    },
+    "2386": {
+      "game_name": "skullking",
+      "users": {
+        "matthewcrumby": {
+          "win": 3,
+          "second": 3,
+          "last": 1,
+          "total": 9
+        },
+        "Gelev": {
+          "win": 1,
+          "second": 4,
+          "last": 2,
+          "total": 9
+        }
+      }
+    },
+    "2384": {
+      "game_name": "fliptoons",
+      "users": {
+        "matthewcrumby": {
+          "win": 1,
+          "second": 0,
+          "last": 0,
+          "total": 1
+        },
+        "Gelev": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 1
+        }
+      }
     }
   },
-  "last_update": "2025-10-22 18:17:19"
+  "last_update": "2025-10-26 18:34:18"
 }
