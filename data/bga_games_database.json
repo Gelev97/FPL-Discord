@@ -1262,16 +1262,16 @@
       "game_name": "skullking",
       "users": {
         "matthewcrumby": {
-          "win": 3,
+          "win": 4,
           "second": 3,
           "last": 1,
-          "total": 9
+          "total": 10
         },
         "Gelev": {
           "win": 1,
           "second": 4,
-          "last": 2,
-          "total": 9
+          "last": 3,
+          "total": 10
         }
       }
     },
@@ -1293,5 +1293,5 @@
       }
     }
   },
-  "last_update": "2025-10-29 18:16:37"
+  "last_update": "2025-11-02 18:32:08"
 }
