@@ -29,14 +29,14 @@
         "Gelev": {
           "win": 12,
           "second": 9,
-          "last": 11,
-          "total": 42
+          "last": 12,
+          "total": 43
         },
         "matthewcrumby": {
-          "win": 21,
+          "win": 22,
           "second": 16,
           "last": 4,
-          "total": 46
+          "total": 47
         },
         "xuzheng863": {
           "win": 7,
@@ -208,15 +208,15 @@
         },
         "matthewcrumby": {
           "win": 8,
-          "second": 4,
+          "second": 6,
           "last": 5,
-          "total": 17
+          "total": 19
         },
         "Gelev": {
           "win": 2,
           "second": 3,
-          "last": 10,
-          "total": 15
+          "last": 12,
+          "total": 17
         },
         "FC YEYE": {
           "win": 0,
@@ -637,16 +637,16 @@
           "total": 4
         },
         "matthewcrumby": {
-          "win": 5,
+          "win": 6,
           "second": 3,
           "last": 0,
-          "total": 10
+          "total": 11
         },
         "Gelev": {
           "win": 2,
           "second": 1,
-          "last": 7,
-          "total": 10
+          "last": 8,
+          "total": 11
         }
       }
     },
@@ -981,10 +981,10 @@
       "game_name": "arnak",
       "users": {
         "matthewcrumby": {
-          "win": 6,
+          "win": 7,
           "second": 0,
           "last": 0,
-          "total": 6
+          "total": 7
         },
         "stinson19980111": {
           "win": 0,
@@ -995,8 +995,8 @@
         "Gelev": {
           "win": 0,
           "second": 0,
-          "last": 5,
-          "total": 5
+          "last": 6,
+          "total": 6
         },
         "xuzheng863": {
           "win": 0,
@@ -1291,7 +1291,24 @@
           "total": 1
         }
       }
+    },
+    "49": {
+      "game_name": "yatzy",
+      "users": {
+        "Gelev": {
+          "win": 1,
+          "second": 0,
+          "last": 0,
+          "total": 1
+        },
+        "matthewcrumby": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 1
+        }
+      }
     }
   },
-  "last_update": "2025-11-02 18:32:08"
+  "last_update": "2025-11-05 18:15:41"
 }
