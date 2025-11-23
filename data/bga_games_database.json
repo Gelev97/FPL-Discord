@@ -137,22 +137,22 @@
       "game_name": "arknova",
       "users": {
         "matthewcrumby": {
-          "win": 15,
+          "win": 16,
           "second": 0,
           "last": 0,
-          "total": 15
+          "total": 16
         },
         "xuzheng863": {
           "win": 0,
-          "second": 7,
+          "second": 8,
           "last": 0,
-          "total": 7
+          "total": 8
         },
         "Gelev": {
           "win": 0,
           "second": 1,
-          "last": 14,
-          "total": 15
+          "last": 15,
+          "total": 16
         },
         "FC YEYE": {
           "win": 0,
@@ -564,20 +564,20 @@
         "Gelev": {
           "win": 5,
           "second": 0,
-          "last": 1,
-          "total": 11
+          "last": 2,
+          "total": 12
         },
         "matthewcrumby": {
-          "win": 3,
+          "win": 4,
           "second": 5,
           "last": 2,
-          "total": 14
+          "total": 15
         },
         "xuzheng863": {
           "win": 0,
           "second": 3,
           "last": 3,
-          "total": 7
+          "total": 8
         }
       }
     },
@@ -1262,16 +1262,22 @@
       "game_name": "skullking",
       "users": {
         "matthewcrumby": {
-          "win": 4,
+          "win": 6,
           "second": 3,
           "last": 1,
-          "total": 11
+          "total": 13
         },
         "Gelev": {
           "win": 1,
           "second": 4,
           "last": 3,
-          "total": 11
+          "total": 13
+        },
+        "xuzheng863": {
+          "win": 0,
+          "second": 0,
+          "last": 0,
+          "total": 1
         }
       }
     },
@@ -1310,5 +1316,5 @@
       }
     }
   },
-  "last_update": "2025-11-19 18:16:25"
+  "last_update": "2025-11-23 18:35:34"
 }
