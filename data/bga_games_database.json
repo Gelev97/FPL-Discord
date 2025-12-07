@@ -27,22 +27,22 @@
       "game_name": "castlecombo",
       "users": {
         "Gelev": {
-          "win": 13,
+          "win": 14,
           "second": 10,
           "last": 12,
-          "total": 45
+          "total": 46
         },
         "matthewcrumby": {
           "win": 22,
           "second": 17,
           "last": 5,
-          "total": 49
+          "total": 50
         },
         "xuzheng863": {
           "win": 7,
-          "second": 10,
+          "second": 11,
           "last": 7,
-          "total": 29
+          "total": 30
         },
         "stinson19980111": {
           "win": 0,
@@ -167,21 +167,21 @@
       "users": {
         "matthewcrumby": {
           "win": 23,
-          "second": 11,
+          "second": 12,
           "last": 6,
-          "total": 43
+          "total": 44
         },
         "Gelev": {
-          "win": 6,
+          "win": 7,
           "second": 15,
           "last": 10,
-          "total": 33
+          "total": 34
         },
         "xuzheng863": {
           "win": 1,
           "second": 3,
           "last": 7,
-          "total": 13
+          "total": 14
         },
         "FC YEYE": {
           "win": 9,
@@ -192,8 +192,8 @@
         "stinson19980111": {
           "win": 0,
           "second": 6,
-          "last": 5,
-          "total": 12
+          "last": 6,
+          "total": 13
         }
       }
     },
@@ -585,16 +585,16 @@
       "game_name": "tickettorideeurope",
       "users": {
         "matthewcrumby": {
-          "win": 2,
+          "win": 3,
           "second": 2,
           "last": 1,
-          "total": 6
+          "total": 7
         },
         "Gelev": {
           "win": 3,
-          "second": 1,
+          "second": 2,
           "last": 2,
-          "total": 6
+          "total": 7
         },
         "xuzheng863": {
           "win": 0,
@@ -1262,21 +1262,27 @@
       "game_name": "skullking",
       "users": {
         "matthewcrumby": {
-          "win": 6,
-          "second": 3,
+          "win": 7,
+          "second": 4,
           "last": 1,
-          "total": 13
+          "total": 15
         },
         "Gelev": {
-          "win": 1,
+          "win": 2,
           "second": 4,
           "last": 3,
-          "total": 13
+          "total": 15
         },
         "xuzheng863": {
           "win": 0,
-          "second": 0,
+          "second": 1,
           "last": 0,
+          "total": 2
+        },
+        "stinson19980111": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
           "total": 1
         }
       }
@@ -1316,5 +1322,5 @@
       }
     }
   },
-  "last_update": "2025-12-03 18:17:40"
+  "last_update": "2025-12-07 18:35:48"
 }
