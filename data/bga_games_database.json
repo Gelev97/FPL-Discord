@@ -614,16 +614,16 @@
       "game_name": "wingspan",
       "users": {
         "Gelev": {
-          "win": 1,
+          "win": 2,
           "second": 3,
           "last": 3,
-          "total": 7
+          "total": 8
         },
         "matthewcrumby": {
           "win": 3,
-          "second": 2,
+          "second": 3,
           "last": 2,
-          "total": 7
+          "total": 8
         }
       }
     },
@@ -1320,7 +1320,24 @@
           "total": 5
         }
       }
+    },
+    "2244": {
+      "game_name": "toybattle",
+      "users": {
+        "Gelev": {
+          "win": 3,
+          "second": 0,
+          "last": 0,
+          "total": 3
+        },
+        "matthewcrumby": {
+          "win": 0,
+          "second": 0,
+          "last": 3,
+          "total": 3
+        }
+      }
     }
   },
-  "last_update": "2025-12-10 18:18:13"
+  "last_update": "2025-12-14 18:37:12"
 }
