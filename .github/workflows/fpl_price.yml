@@ -1,7 +1,7 @@
 name: Daily FPL Prices
 on:
   schedule:
-    - cron: "0 0 * * *"   # every day at 16:00 PDT
+    - cron: "0 22 * * *"   # every day at 16:00 PDT
   workflow_dispatch:     # Allows manual triggering
 jobs:
   run:
