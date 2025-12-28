@@ -3,7 +3,6 @@ name: BGA Stats to Discord
 on:
   schedule:
     - cron: "0 18 * * 0"   # Every Sunday at 18:00 UTC
-    - cron: "0 18 * * 3"   # Every Wednesday at 18:00 UTC
   workflow_dispatch:
 
 permissions:
