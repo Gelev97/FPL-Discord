@@ -57,21 +57,21 @@
       "users": {
         "Gelev": {
           "win": 2,
-          "second": 0,
+          "second": 1,
           "last": 4,
-          "total": 6
+          "total": 7
         },
         "xuzheng863": {
           "win": 0,
           "second": 4,
-          "last": 1,
-          "total": 5
+          "last": 2,
+          "total": 6
         },
         "matthewcrumby": {
-          "win": 4,
+          "win": 5,
           "second": 1,
           "last": 1,
-          "total": 6
+          "total": 7
         }
       }
     },
@@ -166,16 +166,16 @@
       "game_name": "seasaltpaper",
       "users": {
         "matthewcrumby": {
-          "win": 23,
-          "second": 12,
+          "win": 25,
+          "second": 14,
           "last": 6,
-          "total": 44
+          "total": 48
         },
         "Gelev": {
-          "win": 7,
+          "win": 8,
           "second": 15,
-          "last": 10,
-          "total": 34
+          "last": 13,
+          "total": 38
         },
         "xuzheng863": {
           "win": 1,
@@ -1228,10 +1228,10 @@
       "game_name": "viticulture",
       "users": {
         "matthewcrumby": {
-          "win": 1,
-          "second": 0,
-          "last": 0,
-          "total": 1
+          "win": 4,
+          "second": 1,
+          "last": 1,
+          "total": 6
         },
         "stinson19980111": {
           "win": 2,
@@ -1240,10 +1240,10 @@
           "total": 3
         },
         "Gelev": {
-          "win": 0,
-          "second": 0,
-          "last": 2,
-          "total": 2
+          "win": 1,
+          "second": 3,
+          "last": 3,
+          "total": 7
         }
       }
     },
@@ -1343,7 +1343,24 @@
           "total": 3
         }
       }
+    },
+    "1430": {
+      "game_name": "agricola",
+      "users": {
+        "matthewcrumby": {
+          "win": 0,
+          "second": 1,
+          "last": 2,
+          "total": 3
+        },
+        "Gelev": {
+          "win": 2,
+          "second": 0,
+          "last": 1,
+          "total": 3
+        }
+      }
     }
   },
-  "last_update": "2025-12-28 18:38:45"
+  "last_update": "2026-01-04 18:38:19"
 }
