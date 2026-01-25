@@ -27,16 +27,16 @@
       "game_name": "castlecombo",
       "users": {
         "Gelev": {
-          "win": 14,
-          "second": 10,
+          "win": 15,
+          "second": 11,
           "last": 12,
-          "total": 46
+          "total": 49
         },
         "matthewcrumby": {
-          "win": 22,
-          "second": 17,
+          "win": 24,
+          "second": 18,
           "last": 5,
-          "total": 50
+          "total": 53
         },
         "xuzheng863": {
           "win": 7,
@@ -137,22 +137,22 @@
       "game_name": "arknova",
       "users": {
         "matthewcrumby": {
-          "win": 19,
+          "win": 20,
           "second": 1,
           "last": 0,
-          "total": 20
+          "total": 21
         },
         "xuzheng863": {
           "win": 1,
           "second": 8,
           "last": 0,
-          "total": 9
+          "total": 10
         },
         "Gelev": {
           "win": 0,
           "second": 3,
-          "last": 17,
-          "total": 20
+          "last": 18,
+          "total": 21
         },
         "FC YEYE": {
           "win": 0,
@@ -162,9 +162,9 @@
         },
         "stinson19980111": {
           "win": 0,
-          "second": 1,
+          "second": 2,
           "last": 0,
-          "total": 1
+          "total": 2
         }
       }
     },
@@ -175,19 +175,19 @@
           "win": 26,
           "second": 14,
           "last": 6,
-          "total": 49
+          "total": 50
         },
         "Gelev": {
           "win": 8,
           "second": 15,
-          "last": 14,
-          "total": 39
+          "last": 15,
+          "total": 40
         },
         "xuzheng863": {
           "win": 1,
-          "second": 3,
+          "second": 4,
           "last": 7,
-          "total": 14
+          "total": 15
         },
         "FC YEYE": {
           "win": 9,
@@ -196,10 +196,10 @@
           "total": 19
         },
         "stinson19980111": {
-          "win": 0,
+          "win": 1,
           "second": 6,
           "last": 6,
-          "total": 13
+          "total": 14
         }
       }
     },
@@ -215,14 +215,14 @@
         "matthewcrumby": {
           "win": 11,
           "second": 7,
-          "last": 11,
-          "total": 29
+          "last": 12,
+          "total": 30
         },
         "Gelev": {
-          "win": 6,
+          "win": 7,
           "second": 5,
           "last": 16,
-          "total": 27
+          "total": 28
         },
         "FC YEYE": {
           "win": 0,
@@ -391,7 +391,7 @@
           "win": 3,
           "second": 1,
           "last": 3,
-          "total": 10
+          "total": 11
         },
         "FC YEYE": {
           "win": 0,
@@ -409,7 +409,7 @@
           "win": 0,
           "second": 3,
           "last": 2,
-          "total": 9
+          "total": 10
         },
         "xuzheng863": {
           "win": 1,
@@ -1039,16 +1039,16 @@
       "game_name": "sushigo",
       "users": {
         "matthewcrumby": {
-          "win": 1,
+          "win": 2,
           "second": 0,
           "last": 0,
-          "total": 1
+          "total": 2
         },
         "stinson19980111": {
           "win": 0,
-          "second": 0,
+          "second": 1,
           "last": 1,
-          "total": 1
+          "total": 2
         }
       }
     },
@@ -1553,16 +1553,22 @@
       "game_name": "justone",
       "users": {
         "stinson19980111": {
-          "win": 5,
+          "win": 8,
           "second": 0,
           "last": 0,
-          "total": 5
+          "total": 8
         },
         "matthewcrumby": {
-          "win": 5,
+          "win": 8,
           "second": 0,
           "last": 0,
-          "total": 5
+          "total": 8
+        },
+        "xuzheng863": {
+          "win": 2,
+          "second": 0,
+          "last": 0,
+          "total": 2
         }
       }
     },
@@ -1570,16 +1576,16 @@
       "game_name": "deadcells",
       "users": {
         "stinson19980111": {
-          "win": 4,
+          "win": 6,
           "second": 0,
           "last": 0,
-          "total": 4
+          "total": 6
         },
         "matthewcrumby": {
-          "win": 4,
+          "win": 6,
           "second": 0,
           "last": 0,
-          "total": 4
+          "total": 6
         }
       }
     },
@@ -1587,15 +1593,21 @@
       "game_name": "stella",
       "users": {
         "matthewcrumby": {
-          "win": 0,
+          "win": 1,
           "second": 1,
           "last": 0,
-          "total": 1
+          "total": 2
         },
         "stinson19980111": {
           "win": 0,
           "second": 0,
           "last": 1,
+          "total": 2
+        },
+        "xuzheng863": {
+          "win": 1,
+          "second": 0,
+          "last": 0,
           "total": 1
         }
       }
@@ -1684,7 +1696,200 @@
           "total": 1
         }
       }
+    },
+    "2364": {
+      "game_name": "challengersbeachcup",
+      "users": {
+        "matthewcrumby": {
+          "win": 1,
+          "second": 1,
+          "last": 0,
+          "total": 2
+        },
+        "stinson19980111": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 2
+        },
+        "xuzheng863": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 1
+        }
+      }
+    },
+    "2074": {
+      "game_name": "expressions",
+      "users": {
+        "stinson19980111": {
+          "win": 2,
+          "second": 0,
+          "last": 0,
+          "total": 2
+        },
+        "matthewcrumby": {
+          "win": 2,
+          "second": 0,
+          "last": 0,
+          "total": 2
+        }
+      }
+    },
+    "2168": {
+      "game_name": "kado",
+      "users": {
+        "stinson19980111": {
+          "win": 1,
+          "second": 1,
+          "last": 0,
+          "total": 2
+        },
+        "matthewcrumby": {
+          "win": 0,
+          "second": 1,
+          "last": 1,
+          "total": 2
+        }
+      }
+    },
+    "2323": {
+      "game_name": "scratchandcatch",
+      "users": {
+        "matthewcrumby": {
+          "win": 1,
+          "second": 0,
+          "last": 0,
+          "total": 1
+        },
+        "stinson19980111": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 1
+        }
+      }
+    },
+    "2226": {
+      "game_name": "dicedveggies",
+      "users": {
+        "stinson19980111": {
+          "win": 0,
+          "second": 1,
+          "last": 0,
+          "total": 1
+        },
+        "matthewcrumby": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 1
+        }
+      }
+    },
+    "2482": {
+      "game_name": "bootydice",
+      "users": {
+        "matthewcrumby": {
+          "win": 1,
+          "second": 0,
+          "last": 0,
+          "total": 1
+        },
+        "stinson19980111": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 1
+        }
+      }
+    },
+    "2347": {
+      "game_name": "upordown",
+      "users": {
+        "stinson19980111": {
+          "win": 0,
+          "second": 1,
+          "last": 0,
+          "total": 1
+        },
+        "matthewcrumby": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 1
+        }
+      }
+    },
+    "1210": {
+      "game_name": "cubirds",
+      "users": {
+        "stinson19980111": {
+          "win": 1,
+          "second": 0,
+          "last": 1,
+          "total": 2
+        },
+        "matthewcrumby": {
+          "win": 0,
+          "second": 0,
+          "last": 2,
+          "total": 2
+        }
+      }
+    },
+    "1776": {
+      "game_name": "mindup",
+      "users": {
+        "stinson19980111": {
+          "win": 0,
+          "second": 1,
+          "last": 0,
+          "total": 1
+        },
+        "matthewcrumby": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 1
+        }
+      }
+    },
+    "1561": {
+      "game_name": "sushigoparty",
+      "users": {
+        "stinson19980111": {
+          "win": 1,
+          "second": 0,
+          "last": 0,
+          "total": 1
+        },
+        "matthewcrumby": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 1
+        }
+      }
+    },
+    "1822": {
+      "game_name": "dobbleconnect",
+      "users": {
+        "stinson19980111": {
+          "win": 1,
+          "second": 0,
+          "last": 0,
+          "total": 1
+        },
+        "matthewcrumby": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 1
+        }
+      }
     }
   },
-  "last_update": "2026-01-18 18:37:27"
+  "last_update": "2026-01-25 18:40:13"
 }
