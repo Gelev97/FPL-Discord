@@ -4,10 +4,10 @@
       "game_name": "parks",
       "users": {
         "matthewcrumby": {
-          "win": 6,
+          "win": 7,
           "second": 1,
           "last": 2,
-          "total": 9
+          "total": 10
         },
         "Gelev": {
           "win": 0,
@@ -18,8 +18,8 @@
         "stinson19980111": {
           "win": 2,
           "second": 0,
-          "last": 5,
-          "total": 7
+          "last": 6,
+          "total": 8
         }
       }
     },
@@ -29,14 +29,14 @@
         "Gelev": {
           "win": 15,
           "second": 11,
-          "last": 12,
-          "total": 49
+          "last": 13,
+          "total": 50
         },
         "matthewcrumby": {
           "win": 24,
-          "second": 18,
+          "second": 19,
           "last": 5,
-          "total": 53
+          "total": 54
         },
         "xuzheng863": {
           "win": 7,
@@ -137,10 +137,10 @@
       "game_name": "arknova",
       "users": {
         "matthewcrumby": {
-          "win": 20,
+          "win": 21,
           "second": 1,
           "last": 0,
-          "total": 21
+          "total": 22
         },
         "xuzheng863": {
           "win": 1,
@@ -163,8 +163,8 @@
         "stinson19980111": {
           "win": 0,
           "second": 2,
-          "last": 0,
-          "total": 2
+          "last": 1,
+          "total": 3
         }
       }
     },
@@ -936,15 +936,15 @@
       "users": {
         "matthewcrumby": {
           "win": 2,
-          "second": 0,
-          "last": 0,
-          "total": 2
+          "second": 1,
+          "last": 1,
+          "total": 4
         },
         "stinson19980111": {
-          "win": 0,
+          "win": 2,
           "second": 0,
           "last": 2,
-          "total": 2
+          "total": 4
         }
       }
     },
@@ -1553,16 +1553,16 @@
       "game_name": "justone",
       "users": {
         "stinson19980111": {
-          "win": 8,
+          "win": 9,
           "second": 0,
           "last": 0,
-          "total": 8
+          "total": 9
         },
         "matthewcrumby": {
-          "win": 8,
+          "win": 9,
           "second": 0,
           "last": 0,
-          "total": 8
+          "total": 9
         },
         "xuzheng863": {
           "win": 2,
@@ -1889,7 +1889,285 @@
           "total": 1
         }
       }
+    },
+    "2412": {
+      "game_name": "sevenwondersdice",
+      "users": {
+        "matthewcrumby": {
+          "win": 6,
+          "second": 2,
+          "last": 2,
+          "total": 11
+        },
+        "Gelev": {
+          "win": 1,
+          "second": 1,
+          "last": 3,
+          "total": 9
+        },
+        "stinson19980111": {
+          "win": 2,
+          "second": 0,
+          "last": 0,
+          "total": 4
+        }
+      }
+    },
+    "1634": {
+      "game_name": "ghostathome",
+      "users": {
+        "stinson19980111": {
+          "win": 0,
+          "second": 1,
+          "last": 0,
+          "total": 1
+        },
+        "matthewcrumby": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 1
+        }
+      }
+    },
+    "2017": {
+      "game_name": "forks",
+      "users": {
+        "stinson19980111": {
+          "win": 1,
+          "second": 1,
+          "last": 0,
+          "total": 2
+        },
+        "matthewcrumby": {
+          "win": 0,
+          "second": 0,
+          "last": 2,
+          "total": 2
+        }
+      }
+    },
+    "1826": {
+      "game_name": "quibbles",
+      "users": {
+        "stinson19980111": {
+          "win": 1,
+          "second": 0,
+          "last": 0,
+          "total": 1
+        },
+        "matthewcrumby": {
+          "win": 0,
+          "second": 1,
+          "last": 0,
+          "total": 1
+        }
+      }
+    },
+    "2254": {
+      "game_name": "easypeasy",
+      "users": {
+        "stinson19980111": {
+          "win": 0,
+          "second": 1,
+          "last": 0,
+          "total": 1
+        },
+        "matthewcrumby": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 1
+        }
+      }
+    },
+    "1336": {
+      "game_name": "fluxx",
+      "users": {
+        "stinson19980111": {
+          "win": 1,
+          "second": 0,
+          "last": 3,
+          "total": 4
+        },
+        "matthewcrumby": {
+          "win": 1,
+          "second": 0,
+          "last": 3,
+          "total": 4
+        }
+      }
+    },
+    "1648": {
+      "game_name": "myshelfie",
+      "users": {
+        "matthewcrumby": {
+          "win": 1,
+          "second": 0,
+          "last": 0,
+          "total": 1
+        },
+        "stinson19980111": {
+          "win": 0,
+          "second": 1,
+          "last": 0,
+          "total": 1
+        }
+      }
+    },
+    "1096": {
+      "game_name": "incangold",
+      "users": {
+        "stinson19980111": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 1
+        },
+        "matthewcrumby": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 1
+        }
+      }
+    },
+    "1712": {
+      "game_name": "sixtyone",
+      "users": {
+        "stinson19980111": {
+          "win": 1,
+          "second": 0,
+          "last": 0,
+          "total": 1
+        },
+        "matthewcrumby": {
+          "win": 0,
+          "second": 1,
+          "last": 0,
+          "total": 1
+        }
+      }
+    },
+    "1830": {
+      "game_name": "perfectwords",
+      "users": {
+        "stinson19980111": {
+          "win": 4,
+          "second": 0,
+          "last": 0,
+          "total": 4
+        },
+        "matthewcrumby": {
+          "win": 4,
+          "second": 0,
+          "last": 0,
+          "total": 4
+        }
+      }
+    },
+    "1850": {
+      "game_name": "bagofchips",
+      "users": {
+        "matthewcrumby": {
+          "win": 4,
+          "second": 0,
+          "last": 1,
+          "total": 5
+        },
+        "stinson19980111": {
+          "win": 1,
+          "second": 1,
+          "last": 3,
+          "total": 5
+        }
+      }
+    },
+    "1187": {
+      "game_name": "marrakech",
+      "users": {
+        "matthewcrumby": {
+          "win": 1,
+          "second": 0,
+          "last": 0,
+          "total": 1
+        },
+        "stinson19980111": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 1
+        }
+      }
+    },
+    "2537": {
+      "game_name": "pilipili",
+      "users": {
+        "stinson19980111": {
+          "win": 1,
+          "second": 0,
+          "last": 0,
+          "total": 1
+        },
+        "matthewcrumby": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 1
+        }
+      }
+    },
+    "1734": {
+      "game_name": "tanghulu",
+      "users": {
+        "stinson19980111": {
+          "win": 1,
+          "second": 0,
+          "last": 0,
+          "total": 1
+        },
+        "matthewcrumby": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 1
+        }
+      }
+    },
+    "1595": {
+      "game_name": "draftcider",
+      "users": {
+        "matthewcrumby": {
+          "win": 1,
+          "second": 0,
+          "last": 0,
+          "total": 1
+        },
+        "stinson19980111": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 1
+        }
+      }
+    },
+    "1454": {
+      "game_name": "gravitysuperstar",
+      "users": {
+        "matthewcrumby": {
+          "win": 1,
+          "second": 0,
+          "last": 0,
+          "total": 1
+        },
+        "stinson19980111": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 1
+        }
+      }
     }
   },
-  "last_update": "2026-01-25 18:40:13"
+  "last_update": "2026-02-01 18:48:26"
 }
