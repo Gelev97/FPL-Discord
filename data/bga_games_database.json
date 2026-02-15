@@ -33,16 +33,16 @@
           "total": 50
         },
         "matthewcrumby": {
-          "win": 24,
+          "win": 25,
           "second": 19,
           "last": 5,
-          "total": 54
+          "total": 55
         },
         "xuzheng863": {
           "win": 7,
-          "second": 11,
+          "second": 12,
           "last": 7,
-          "total": 30
+          "total": 31
         },
         "stinson19980111": {
           "win": 0,
@@ -137,10 +137,10 @@
       "game_name": "arknova",
       "users": {
         "matthewcrumby": {
-          "win": 23,
+          "win": 24,
           "second": 1,
           "last": 0,
-          "total": 24
+          "total": 25
         },
         "xuzheng863": {
           "win": 1,
@@ -163,8 +163,8 @@
         "stinson19980111": {
           "win": 0,
           "second": 3,
-          "last": 2,
-          "total": 5
+          "last": 3,
+          "total": 6
         }
       }
     },
@@ -2198,14 +2198,14 @@
         "matthewcrumby": {
           "win": 1,
           "second": 0,
-          "last": 1,
-          "total": 2
+          "last": 2,
+          "total": 3
         },
         "stinson19980111": {
-          "win": 1,
+          "win": 2,
           "second": 0,
           "last": 1,
-          "total": 2
+          "total": 3
         }
       }
     },
@@ -2298,16 +2298,16 @@
       "game_name": "letsgotojapan",
       "users": {
         "matthewcrumby": {
-          "win": 5,
+          "win": 7,
           "second": 0,
-          "last": 1,
-          "total": 6
+          "last": 4,
+          "total": 11
         },
         "stinson19980111": {
-          "win": 1,
+          "win": 4,
           "second": 0,
-          "last": 5,
-          "total": 6
+          "last": 7,
+          "total": 11
         }
       }
     },
@@ -2395,7 +2395,24 @@
           "total": 1
         }
       }
+    },
+    "1275": {
+      "game_name": "concept",
+      "users": {
+        "stinson19980111": {
+          "win": 1,
+          "second": 0,
+          "last": 0,
+          "total": 1
+        },
+        "matthewcrumby": {
+          "win": 1,
+          "second": 0,
+          "last": 0,
+          "total": 1
+        }
+      }
     }
   },
-  "last_update": "2026-02-08 18:50:05"
+  "last_update": "2026-02-15 18:49:05"
 }
