@@ -137,16 +137,16 @@
       "game_name": "arknova",
       "users": {
         "matthewcrumby": {
-          "win": 28,
+          "win": 34,
           "second": 1,
           "last": 0,
-          "total": 29
+          "total": 35
         },
         "xuzheng863": {
           "win": 1,
-          "second": 8,
+          "second": 9,
           "last": 0,
-          "total": 10
+          "total": 11
         },
         "Gelev": {
           "win": 0,
@@ -464,10 +464,10 @@
           "total": 8
         },
         "matthewcrumby": {
-          "win": 3,
+          "win": 5,
           "second": 3,
           "last": 1,
-          "total": 7
+          "total": 9
         }
       }
     },
@@ -1753,10 +1753,10 @@
           "total": 2
         },
         "matthewcrumby": {
-          "win": 0,
+          "win": 1,
           "second": 1,
           "last": 1,
-          "total": 2
+          "total": 3
         }
       }
     },
@@ -2071,10 +2071,10 @@
           "total": 8
         },
         "matthewcrumby": {
-          "win": 10,
+          "win": 16,
           "second": 0,
           "last": 0,
-          "total": 10
+          "total": 16
         },
         "xuzheng863": {
           "win": 3,
@@ -2088,10 +2088,10 @@
       "game_name": "bagofchips",
       "users": {
         "matthewcrumby": {
-          "win": 5,
+          "win": 7,
           "second": 0,
           "last": 2,
-          "total": 7
+          "total": 9
         },
         "stinson19980111": {
           "win": 1,
@@ -2298,10 +2298,10 @@
       "game_name": "letsgotojapan",
       "users": {
         "matthewcrumby": {
-          "win": 7,
+          "win": 8,
           "second": 0,
           "last": 4,
-          "total": 11
+          "total": 12
         },
         "stinson19980111": {
           "win": 4,
@@ -2406,10 +2406,10 @@
           "total": 1
         },
         "matthewcrumby": {
-          "win": 3,
+          "win": 4,
           "second": 0,
           "last": 0,
-          "total": 3
+          "total": 4
         }
       }
     },
@@ -2450,10 +2450,10 @@
       "game_name": "lettertycoon",
       "users": {
         "matthewcrumby": {
-          "win": 1,
+          "win": 2,
           "second": 0,
           "last": 0,
-          "total": 1
+          "total": 2
         }
       }
     },
@@ -2511,7 +2511,161 @@
           "total": 1
         }
       }
+    },
+    "1188": {
+      "game_name": "toeshambo",
+      "users": {
+        "matthewcrumby": {
+          "win": 1,
+          "second": 0,
+          "last": 0,
+          "total": 1
+        }
+      }
+    },
+    "2058": {
+      "game_name": "festival",
+      "users": {
+        "matthewcrumby": {
+          "win": 2,
+          "second": 0,
+          "last": 1,
+          "total": 3
+        }
+      }
+    },
+    "1885": {
+      "game_name": "linx",
+      "users": {
+        "matthewcrumby": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 1
+        }
+      }
+    },
+    "1772": {
+      "game_name": "pocketcats",
+      "users": {
+        "matthewcrumby": {
+          "win": 1,
+          "second": 0,
+          "last": 0,
+          "total": 1
+        }
+      }
+    },
+    "1707": {
+      "game_name": "setup",
+      "users": {
+        "matthewcrumby": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 1
+        }
+      }
+    },
+    "1425": {
+      "game_name": "cardiceo",
+      "users": {
+        "matthewcrumby": {
+          "win": 1,
+          "second": 0,
+          "last": 0,
+          "total": 1
+        }
+      }
+    },
+    "1186": {
+      "game_name": "connectfour",
+      "users": {
+        "matthewcrumby": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 1
+        }
+      }
+    },
+    "1871": {
+      "game_name": "letscatchthelion",
+      "users": {
+        "matthewcrumby": {
+          "win": 3,
+          "second": 0,
+          "last": 2,
+          "total": 5
+        }
+      }
+    },
+    "2555": {
+      "game_name": "gygesdeluxe",
+      "users": {
+        "matthewcrumby": {
+          "win": 1,
+          "second": 0,
+          "last": 0,
+          "total": 1
+        }
+      }
+    },
+    "2581": {
+      "game_name": "visions",
+      "users": {
+        "matthewcrumby": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 1
+        }
+      }
+    },
+    "1752": {
+      "game_name": "doglover",
+      "users": {
+        "matthewcrumby": {
+          "win": 2,
+          "second": 0,
+          "last": 0,
+          "total": 2
+        }
+      }
+    },
+    "2031": {
+      "game_name": "takenokolor",
+      "users": {
+        "matthewcrumby": {
+          "win": 0,
+          "second": 0,
+          "last": 1,
+          "total": 1
+        }
+      }
+    },
+    "1044": {
+      "game_name": "loveletter",
+      "users": {
+        "matthewcrumby": {
+          "win": 1,
+          "second": 0,
+          "last": 0,
+          "total": 1
+        }
+      }
+    },
+    "1833": {
+      "game_name": "canvas",
+      "users": {
+        "matthewcrumby": {
+          "win": 1,
+          "second": 0,
+          "last": 1,
+          "total": 2
+        }
+      }
     }
   },
-  "last_update": "2026-02-22 18:49:06"
+  "last_update": "2026-03-01 18:46:16"
 }
