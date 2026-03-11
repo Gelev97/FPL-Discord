@@ -1,0 +1,129 @@
+{
+  "last_updated": "2026-03-10",
+  "top_form": [
+    {
+      "name": "Jo\u00e3o Pedro",
+      "form": "9.5",
+      "price": 7.7
+    },
+    {
+      "name": "Virgil",
+      "form": "9.0",
+      "price": 6.2
+    },
+    {
+      "name": "O'Reilly",
+      "form": "9.0",
+      "price": 5.1
+    },
+    {
+      "name": "Semenyo",
+      "form": "8.2",
+      "price": 8.3
+    },
+    {
+      "name": "Iwobi",
+      "form": "6.8",
+      "price": 6.4
+    },
+    {
+      "name": "Mac Allister",
+      "form": "6.8",
+      "price": 6.3
+    },
+    {
+      "name": "A\u00eft-Nouri",
+      "form": "6.5",
+      "price": 5.7
+    },
+    {
+      "name": "\u0160e\u0161ko",
+      "form": "6.5",
+      "price": 7.3
+    },
+    {
+      "name": "Truffert",
+      "form": "6.2",
+      "price": 4.6
+    },
+    {
+      "name": "Hill",
+      "form": "6.2",
+      "price": 4.2
+    }
+  ],
+  "top_threat": [
+    {
+      "name": "B.Fernandes",
+      "ict": "269.6",
+      "xG": "9.08"
+    },
+    {
+      "name": "Haaland",
+      "ict": "240.7",
+      "xG": "20.76"
+    },
+    {
+      "name": "Semenyo",
+      "ict": "213.5",
+      "xG": "9.81"
+    },
+    {
+      "name": "Enzo",
+      "ict": "200.6",
+      "xG": "9.93"
+    },
+    {
+      "name": "Thiago",
+      "ict": "199.7",
+      "xG": "15.64"
+    },
+    {
+      "name": "Saka",
+      "ict": "195.5",
+      "xG": "6.84"
+    },
+    {
+      "name": "Mbeumo",
+      "ict": "190.3",
+      "xG": "7.87"
+    },
+    {
+      "name": "Jo\u00e3o Pedro",
+      "ict": "189.4",
+      "xG": "13.18"
+    },
+    {
+      "name": "Szoboszlai",
+      "ict": "187.3",
+      "xG": "3.62"
+    },
+    {
+      "name": "Rice",
+      "ict": "185.4",
+      "xG": "2.99"
+    }
+  ],
+  "best_fixtures": [
+    {
+      "team": "Crystal Palace",
+      "fdr": 5
+    },
+    {
+      "team": "Arsenal",
+      "fdr": 6
+    },
+    {
+      "team": "Man City",
+      "fdr": 6
+    },
+    {
+      "team": "Wolves",
+      "fdr": 6
+    },
+    {
+      "team": "Brentford",
+      "fdr": 8
+    }
+  ]
+}
